@@ -1,38 +1,38 @@
 #pragma once
 
-class Matrix //Клас матриці
+class Matrix //РљР»Р°СЃ РјР°С‚СЂРёС†С–
 {
 private:
-	int Row; //Кількість рядків матриці
-	int Column; //Кількість стовпців матриці
-	double** Arr; //Представлення самої матриці
+	int Row; //РљС–Р»СЊРєС–СЃС‚СЊ СЂСЏРґРєС–РІ РјР°С‚СЂРёС†С–
+	int Column; //РљС–Р»СЊРєС–СЃС‚СЊ СЃС‚РѕРІРїС†С–РІ РјР°С‚СЂРёС†С–
+	double** Arr; //РџСЂРµРґСЃС‚Р°РІР»РµРЅРЅСЏ СЃР°РјРѕС— РјР°С‚СЂРёС†С–
 
 public:
-	Matrix(int RowNumber, int ColumnNumber); //Конструктор класу
-	~Matrix(); //Деструктор класу
-	Matrix(const Matrix& matrix); //Конструктор копіювання
-	void ArrGenAuto(int RangeMin, int RangeMax); //Генерація матриці випаковим чином
-	void ArrgenMan(); //Створення матриці мануально
-	int GetRow(); //Гетер рядків
-	int GetColumn(); //Гетер стовпців
-	double** GetArr(); //Гетер матрциі
-	int Det(); //Функція знаходження визначника матриці
-    //Функція викреслення рядка та стовпця
+	Matrix(int RowNumber, int ColumnNumber); //РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєР»Р°СЃСѓ
+	~Matrix(); //Р”РµСЃС‚СЂСѓРєС‚РѕСЂ РєР»Р°СЃСѓ
+	Matrix(const Matrix& matrix); //РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїС–СЋРІР°РЅРЅСЏ
+	void ArrGenAuto(int RangeMin, int RangeMax); //Р“РµРЅРµСЂР°С†С–СЏ РјР°С‚СЂРёС†С– РІРёРїР°РєРѕРІРёРј С‡РёРЅРѕРј
+	void ArrgenMan(); //РЎС‚РІРѕСЂРµРЅРЅСЏ РјР°С‚СЂРёС†С– РјР°РЅСѓР°Р»СЊРЅРѕ
+	int GetRow(); //Р“РµС‚РµСЂ СЂСЏРґРєС–РІ
+	int GetColumn(); //Р“РµС‚РµСЂ СЃС‚РѕРІРїС†С–РІ
+	double** GetArr(); //Р“РµС‚РµСЂ РјР°С‚СЂС†РёС–
+	int Det(); //Р¤СѓРЅРєС†С–СЏ Р·РЅР°С…РѕРґР¶РµРЅРЅСЏ РІРёР·РЅР°С‡РЅРёРєР° РјР°С‚СЂРёС†С–
+    //Р¤СѓРЅРєС†С–СЏ РІРёРєСЂРµСЃР»РµРЅРЅСЏ СЂСЏРґРєР° С‚Р° СЃС‚РѕРІРїС†СЏ
 	void GetMatr(Matrix CurrentMatrix, int IndRow, int IndCol);
-	Matrix TranspMatrix(); //Транспонування матриці
-	//Перевантаження оператора потокового виводу
+	Matrix TranspMatrix(); //РўСЂР°РЅСЃРїРѕРЅСѓРІР°РЅРЅСЏ РјР°С‚СЂРёС†С–
+	//РџРµСЂРµРІР°РЅС‚Р°Р¶РµРЅРЅСЏ РѕРїРµСЂР°С‚РѕСЂР° РїРѕС‚РѕРєРѕРІРѕРіРѕ РІРёРІРѕРґСѓ
 	friend std::ostream& operator << (std::ostream& out, const Matrix& MatrixA); 
-	Matrix operator - (const Matrix& matrix); //Перевантаження оператора віднімання
-	Matrix operator * (const Matrix& matrix); //Перевантаження оператора для множення двох матриць
-	Matrix operator * (double number); //Перевантаження оператора для множення матриці на число 
-	void operator = (const Matrix &OtherMatrix); //Перевантаження оператора присвоєння  
+	Matrix operator - (const Matrix& matrix); //РџРµСЂРµРІР°РЅС‚Р°Р¶РµРЅРЅСЏ РѕРїРµСЂР°С‚РѕСЂР° РІС–РґРЅС–РјР°РЅРЅСЏ
+	Matrix operator * (const Matrix& matrix); //РџРµСЂРµРІР°РЅС‚Р°Р¶РµРЅРЅСЏ РѕРїРµСЂР°С‚РѕСЂР° РґР»СЏ РјРЅРѕР¶РµРЅРЅСЏ РґРІРѕС… РјР°С‚СЂРёС†СЊ
+	Matrix operator * (double number); //РџРµСЂРµРІР°РЅС‚Р°Р¶РµРЅРЅСЏ РѕРїРµСЂР°С‚РѕСЂР° РґР»СЏ РјРЅРѕР¶РµРЅРЅСЏ РјР°С‚СЂРёС†С– РЅР° С‡РёСЃР»Рѕ 
+	void operator = (const Matrix &OtherMatrix); //РџРµСЂРµРІР°РЅС‚Р°Р¶РµРЅРЅСЏ РѕРїРµСЂР°С‚РѕСЂР° РїСЂРёСЃРІРѕС”РЅРЅСЏ  
 };
 
-bool DoubleZero(double number); //Перевірка на машинні нулі у матриці
-bool UnAcceptable(Matrix MainMatrix); //Перевірка матриці на визначники різних її частин
-Matrix MachineZero(Matrix CurrentMatrix); //Заміна усіх машинних нулей на звичайні
-Matrix NormalReverse(Matrix CurrentMatrix); //Знаходження оберненної матриці для кліток
-Matrix Embordering(Matrix MainMatrix); //Метод окаймлення
-Matrix CellDivisionInitialization(Matrix MainMatrix); //Розбиття матриці на клітки
-//Знаходження матриці методом розбиття на клітки
+bool DoubleZero(double number); //РџРµСЂРµРІС–СЂРєР° РЅР° РјР°С€РёРЅРЅС– РЅСѓР»С– Сѓ РјР°С‚СЂРёС†С–
+bool UnAcceptable(Matrix MainMatrix); //РџРµСЂРµРІС–СЂРєР° РјР°С‚СЂРёС†С– РЅР° РІРёР·РЅР°С‡РЅРёРєРё СЂС–Р·РЅРёС… С—С— С‡Р°СЃС‚РёРЅ
+Matrix MachineZero(Matrix CurrentMatrix); //Р—Р°РјС–РЅР° СѓСЃС–С… РјР°С€РёРЅРЅРёС… РЅСѓР»РµР№ РЅР° Р·РІРёС‡Р°Р№РЅС–
+Matrix NormalReverse(Matrix CurrentMatrix); //Р—РЅР°С…РѕРґР¶РµРЅРЅСЏ РѕР±РµСЂРЅРµРЅРЅРѕС— РјР°С‚СЂРёС†С– РґР»СЏ РєР»С–С‚РѕРє
+Matrix Embordering(Matrix MainMatrix); //РњРµС‚РѕРґ РѕРєР°Р№РјР»РµРЅРЅСЏ
+Matrix CellDivisionInitialization(Matrix MainMatrix); //Р РѕР·Р±РёС‚С‚СЏ РјР°С‚СЂРёС†С– РЅР° РєР»С–С‚РєРё
+//Р—РЅР°С…РѕРґР¶РµРЅРЅСЏ РјР°С‚СЂРёС†С– РјРµС‚РѕРґРѕРј СЂРѕР·Р±РёС‚С‚СЏ РЅР° РєР»С–С‚РєРё
 Matrix CellDivision(Matrix MainMatrix, Matrix MatrixCell11, Matrix MatrixCell12, Matrix MatrixCell21, Matrix MatrixCell22);
