@@ -6,10 +6,10 @@
 #include <string>
 using namespace std;
 
-//Не реализована проверка на готовые клетки, CellDivision иногда не работает
+//РќРµ СЂРµР°Р»РёР·РѕРІР°РЅР° РїСЂРѕРІРµСЂРєР° РЅР° РіРѕС‚РѕРІС‹Рµ РєР»РµС‚РєРё, CellDivision РёРЅРѕРіРґР° РЅРµ СЂР°Р±РѕС‚Р°РµС‚
 
-//Функції класу Matrix
-Matrix::Matrix(int RowNumber, int ColumnNumber) //Конструктор класу
+//Р¤СѓРЅРєС†С–С— РєР»Р°СЃСѓ Matrix
+Matrix::Matrix(int RowNumber, int ColumnNumber) //РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєР»Р°СЃСѓ
 {
 	Row = RowNumber;
 	Column = ColumnNumber;
@@ -21,7 +21,7 @@ Matrix::Matrix(int RowNumber, int ColumnNumber) //Конструктор класу
 	}
 }
 
-Matrix::~Matrix() //Деструктор класу
+Matrix::~Matrix() //Р”РµСЃС‚СЂСѓРєС‚РѕСЂ РєР»Р°СЃСѓ
 {
 	for (int i = 0; i < Row; i++)
 	{
@@ -30,7 +30,7 @@ Matrix::~Matrix() //Деструктор класу
 	delete[] Arr;
 }
 
-Matrix::Matrix(const Matrix& matrix)  //Конструктор копіювання
+Matrix::Matrix(const Matrix& matrix)  //РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїС–СЋРІР°РЅРЅСЏ
 {
 	this->Row = matrix.Row;
 	this->Column = matrix.Column;
@@ -48,7 +48,7 @@ Matrix::Matrix(const Matrix& matrix)  //Конструктор копіювання
 	}
 }
 
-void Matrix::ArrGenAuto(int RangeMin, int RangeMax) //Генерація матриці випадковим чином
+void Matrix::ArrGenAuto(int RangeMin, int RangeMax) //Р“РµРЅРµСЂР°С†С–СЏ РјР°С‚СЂРёС†С– РІРёРїР°РґРєРѕРІРёРј С‡РёРЅРѕРј
 {
 	srand(time(NULL));
 	for (int k = 0; ; k++)
@@ -78,7 +78,7 @@ void Matrix::ArrGenAuto(int RangeMin, int RangeMax) //Генерація матриці випадков
 	}
 }
 
-void Matrix::ArrgenMan() //Створення матриці мануально
+void Matrix::ArrgenMan() //РЎС‚РІРѕСЂРµРЅРЅСЏ РјР°С‚СЂРёС†С– РјР°РЅСѓР°Р»СЊРЅРѕ
 {
 	for (int k = 0; ; k++)
 	{
@@ -102,7 +102,7 @@ void Matrix::ArrgenMan() //Створення матриці мануально
 	}
 }
 
-int Matrix::Det() //Функція знаходження визначника матриці
+int Matrix::Det() //Р¤СѓРЅРєС†С–СЏ Р·РЅР°С…РѕРґР¶РµРЅРЅСЏ РІРёР·РЅР°С‡РЅРёРєР° РјР°С‚СЂРёС†С–
 {
 	int temp = 0;
 	int k = 1;
@@ -130,7 +130,7 @@ int Matrix::Det() //Функція знаходження визначника матриці
 	return temp;
 }
 
-//Функція викреслення рядка та стовпця
+//Р¤СѓРЅРєС†С–СЏ РІРёРєСЂРµСЃР»РµРЅРЅСЏ СЂСЏРґРєР° С‚Р° СЃС‚РѕРІРїС†СЏ
 void Matrix::GetMatr(Matrix CurrentMatrix, int IndRow, int IndCol)
 {
 	int ki = 0;
@@ -151,7 +151,7 @@ void Matrix::GetMatr(Matrix CurrentMatrix, int IndRow, int IndCol)
 	}
 }
 
-Matrix Matrix::TranspMatrix() //Транспонування матриці
+Matrix Matrix::TranspMatrix() //РўСЂР°РЅСЃРїРѕРЅСѓРІР°РЅРЅСЏ РјР°С‚СЂРёС†С–
 {
 	Matrix TempMatrix(Row, Column);
 	for (int i = 0; i < Row; i++)
@@ -164,22 +164,22 @@ Matrix Matrix::TranspMatrix() //Транспонування матриці
 	return TempMatrix;
 }
 
-int Matrix::GetRow() //Гетер рядків матриці
+int Matrix::GetRow() //Р“РµС‚РµСЂ СЂСЏРґРєС–РІ РјР°С‚СЂРёС†С–
 {
 	return Row;
 }
 
-int Matrix::GetColumn() //Гетер стовпців матриці
+int Matrix::GetColumn() //Р“РµС‚РµСЂ СЃС‚РѕРІРїС†С–РІ РјР°С‚СЂРёС†С–
 {
 	return Column;
 }
 
-double** Matrix::GetArr() //Гетер матрциі
+double** Matrix::GetArr() //Р“РµС‚РµСЂ РјР°С‚СЂС†РёС–
 {
 	return Arr;
 }
 
-//Перевантаження оператора потокового виводу
+//РџРµСЂРµРІР°РЅС‚Р°Р¶РµРЅРЅСЏ РѕРїРµСЂР°С‚РѕСЂР° РїРѕС‚РѕРєРѕРІРѕРіРѕ РІРёРІРѕРґСѓ
 std::ostream& operator<< (std::ostream& out, const Matrix& MatrixA) 
 {
 	for (int i = 0; i < MatrixA.Row; i++)
@@ -194,7 +194,7 @@ std::ostream& operator<< (std::ostream& out, const Matrix& MatrixA)
 	return out;
 }
 
-Matrix Matrix::operator - (const Matrix& matrix) //Перевантаження оператора віднімання
+Matrix Matrix::operator - (const Matrix& matrix) //РџРµСЂРµРІР°РЅС‚Р°Р¶РµРЅРЅСЏ РѕРїРµСЂР°С‚РѕСЂР° РІС–РґРЅС–РјР°РЅРЅСЏ
 {
 	Matrix NewMatrix(matrix.Row, matrix.Column);
 	for (int i = 0; i < Row; i++)
@@ -207,7 +207,7 @@ Matrix Matrix::operator - (const Matrix& matrix) //Перевантаження оператора відн
 	return NewMatrix;
 }
 
-Matrix Matrix::operator * (const Matrix& matrix) //Перевантаження оператора для множення двох матриць 
+Matrix Matrix::operator * (const Matrix& matrix) //РџРµСЂРµРІР°РЅС‚Р°Р¶РµРЅРЅСЏ РѕРїРµСЂР°С‚РѕСЂР° РґР»СЏ РјРЅРѕР¶РµРЅРЅСЏ РґРІРѕС… РјР°С‚СЂРёС†СЊ 
 {
 	Matrix NewMatrix(Row, matrix.Column);
 	NewMatrix.ArrGenAuto(0, 0);
@@ -224,7 +224,7 @@ Matrix Matrix::operator * (const Matrix& matrix) //Перевантаження оператора для 
 	return NewMatrix;
 }
 
-Matrix Matrix::operator * (double number) //Перевантаження оператора для множення матриці на число  
+Matrix Matrix::operator * (double number) //РџРµСЂРµРІР°РЅС‚Р°Р¶РµРЅРЅСЏ РѕРїРµСЂР°С‚РѕСЂР° РґР»СЏ РјРЅРѕР¶РµРЅРЅСЏ РјР°С‚СЂРёС†С– РЅР° С‡РёСЃР»Рѕ  
 {
 	Matrix NewMatrix(Row, Column);
 	for (int i = 0; i < Row; i++)
@@ -237,7 +237,7 @@ Matrix Matrix::operator * (double number) //Перевантаження оператора для множенн
 	return NewMatrix;
 }
 
-void Matrix::operator = (const Matrix &OtherMatrix) //Перевантаження оператора присвоєння  
+void Matrix::operator = (const Matrix &OtherMatrix) //РџРµСЂРµРІР°РЅС‚Р°Р¶РµРЅРЅСЏ РѕРїРµСЂР°С‚РѕСЂР° РїСЂРёСЃРІРѕС”РЅРЅСЏ  
 {
 	int OldRow = this->Row;
 	this->Row = OtherMatrix.Row;
@@ -267,7 +267,7 @@ void Matrix::operator = (const Matrix &OtherMatrix) //Перевантаження оператора п
 }
 
 
-bool UnAcceptable(Matrix MainMatrix) //Перевірка матриці на визначники різних її частин
+bool UnAcceptable(Matrix MainMatrix) //РџРµСЂРµРІС–СЂРєР° РјР°С‚СЂРёС†С– РЅР° РІРёР·РЅР°С‡РЅРёРєРё СЂС–Р·РЅРёС… С—С— С‡Р°СЃС‚РёРЅ
 {
 	if (MainMatrix.Det() == 0)
 	{
@@ -331,7 +331,7 @@ bool UnAcceptable(Matrix MainMatrix) //Перевірка матриці на визначники різних її
 }
 
 
-Matrix NormalReverse(Matrix CurrentMatrix) //Знаходження оберненної матриці для кліток
+Matrix NormalReverse(Matrix CurrentMatrix) //Р—РЅР°С…РѕРґР¶РµРЅРЅСЏ РѕР±РµСЂРЅРµРЅРЅРѕС— РјР°С‚СЂРёС†С– РґР»СЏ РєР»С–С‚РѕРє
 {
 	int det = CurrentMatrix.Det();
 	Matrix ReverseMatrix(CurrentMatrix.GetRow(), CurrentMatrix.GetRow());
@@ -348,7 +348,7 @@ Matrix NormalReverse(Matrix CurrentMatrix) //Знаходження оберненної матриці для 
 	return ReverseMatrix.TranspMatrix();
 }
 
-Matrix MachineZero(Matrix CurrentMatrix) //Заміна усіх машинних нулей на звичайні
+Matrix MachineZero(Matrix CurrentMatrix) //Р—Р°РјС–РЅР° СѓСЃС–С… РјР°С€РёРЅРЅРёС… РЅСѓР»РµР№ РЅР° Р·РІРёС‡Р°Р№РЅС–
 {
 	for (int i = 0; i < CurrentMatrix.GetRow(); i++)
 	{
@@ -363,7 +363,7 @@ Matrix MachineZero(Matrix CurrentMatrix) //Заміна усіх машинних нулей на звичайн
 	return CurrentMatrix;
 }
 
-bool DoubleZero(double number) //Перевірка на машинні нулі у матриці
+bool DoubleZero(double number) //РџРµСЂРµРІС–СЂРєР° РЅР° РјР°С€РёРЅРЅС– РЅСѓР»С– Сѓ РјР°С‚СЂРёС†С–
 {
 	string ZeroCheck = to_string(number);
 	string ZeroMinus = "-0.000000";
@@ -382,7 +382,7 @@ bool DoubleZero(double number) //Перевірка на машинні нулі у матриці
 	}
 }
 
-Matrix Embordering(Matrix MainMatrix) //Метод окаймлення
+Matrix Embordering(Matrix MainMatrix) //РњРµС‚РѕРґ РѕРєР°Р№РјР»РµРЅРЅСЏ
 {
 	int Disposal = MainMatrix.GetRow();
 
@@ -454,7 +454,7 @@ Matrix Embordering(Matrix MainMatrix) //Метод окаймлення
 	}
 }
 
-Matrix CellDivisionInitialization(Matrix MainMatrix) //Розбиття матриці на клітки
+Matrix CellDivisionInitialization(Matrix MainMatrix) //Р РѕР·Р±РёС‚С‚СЏ РјР°С‚СЂРёС†С– РЅР° РєР»С–С‚РєРё
 {
 	int Disposal = MainMatrix.GetRow();
 
@@ -524,7 +524,7 @@ Matrix CellDivisionInitialization(Matrix MainMatrix) //Розбиття матриці на клітк
 	}
 }
 
-//Знаходження матриці методом розбиття на клітки
+//Р—РЅР°С…РѕРґР¶РµРЅРЅСЏ РјР°С‚СЂРёС†С– РјРµС‚РѕРґРѕРј СЂРѕР·Р±РёС‚С‚СЏ РЅР° РєР»С–С‚РєРё
 Matrix CellDivision(Matrix MainMatrix, Matrix MatrixCell11, Matrix MatrixCell12, Matrix MatrixCell21, Matrix MatrixCell22)
 {
 	Matrix MatrixR11 = Embordering(MatrixCell11 - (MatrixCell12 * (Embordering(MatrixCell22) * MatrixCell21)));
