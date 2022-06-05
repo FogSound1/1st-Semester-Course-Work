@@ -1,1 +1,16 @@
+Matrix.h - прототипи класу Matrix
+Matrix.cpp - функції класу Mstrix
 
+RevMat.h - прототипи вспоміжних функцій
+RevMat.cpp - вспоміжні функції
+
+RevMatFor.h - прототипи основної форми програми
+RevMatForm.cpp - функції основної форми додатку
+
+EmborderingSolution.h - прототипи форми з детальним рішенням методу окаймлення
+EmborderingSolution.cpp - функції форми з детальним рішенням методу окаймлення
+
+CellDivisionSolution.h - прототипи форми з детальним рішенням методу розбиття на клітини
+CellDivisionSolution.cpp - функції форми з детальним рішенням методу розбиття на клітини
+
+ReverseMatrix.exe - програма
