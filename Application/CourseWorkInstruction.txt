@@ -1,5 +1,5 @@
 Matrix.h - прототипи класу Matrix
-Matrix.cpp - функції класу Mstrix
+Matrix.cpp - функції класу Matrix
 
 RevMat.h - прототипи вспоміжних функцій
 RevMat.cpp - вспоміжні функції
