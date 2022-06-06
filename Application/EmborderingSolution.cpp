@@ -25,7 +25,19 @@ void ReverseMatrix::EmborderingSolution::Esolution(Matrix MainMatrix, int iter)
 
 		AkGrid->RowCount = 1;
 		AkGrid->ColumnCount = 1;
-		MainMatrixE->Rows[0]->Cells[0]->Value = OldA.GetArr()[0][0];
+
+		MatrixAView->RowCount = OldA.GetRow();
+		MatrixAView->ColumnCount = OldA.GetColumn();
+		for (int i = 0; i < OldA.GetRow(); i++)
+		{
+			for (int j = 0; j < OldA.GetColumn(); j++)
+			{
+				//Значення матриці
+				MatrixAView->Rows[i]->Cells[j]->Value = OldA.GetArr()[i][j];
+			}
+		}
+		MatrixAView->AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode::AutoSizeToAllHeaders);
+		MatrixAView->AutoResizeColumns();//Стовбці
 	}
 
 	for (int k = 1; k < Disposal; k++)

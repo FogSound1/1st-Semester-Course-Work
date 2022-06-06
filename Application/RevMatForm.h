@@ -168,8 +168,10 @@ namespace ReverseMatrix
 			this->MainMatrixGridView->AllowUserToResizeColumns = false;
 			this->MainMatrixGridView->AllowUserToResizeRows = false;
 			this->MainMatrixGridView->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->MainMatrixGridView->ColumnHeadersVisible = false;
 			this->MainMatrixGridView->Location = System::Drawing::Point(12, 78);
 			this->MainMatrixGridView->Name = L"MainMatrixGridView";
+			this->MainMatrixGridView->RowHeadersVisible = false;
 			this->MainMatrixGridView->RowHeadersWidth = 62;
 			this->MainMatrixGridView->RowTemplate->Height = 28;
 			this->MainMatrixGridView->Size = System::Drawing::Size(372, 269);

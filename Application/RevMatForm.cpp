@@ -120,12 +120,6 @@ void ReverseMatrix::RevMatForm::ShowMatrix(int SizeMatrix, Matrix MainMatrix, in
         {
             for (int j = 0; j < SizeMatrix; j++)
             {
-                //Назва таблиці у лівому кутку
-                MainMatrixGridView->TopLeftHeaderCell->Value = "Головна матриця";
-                //Номери столбців
-                MainMatrixGridView->Columns[j]->HeaderCell->Value = Convert::ToString(j + 1);
-                //Номери рядків
-                MainMatrixGridView->Rows[i]->HeaderCell->Value = Convert::ToString(i + 1);
                 //Значення матриці
                 MainMatrixGridView->Rows[i]->Cells[j]->Value = MainMatrix.GetArr()[i][j];
             }
@@ -137,12 +131,6 @@ void ReverseMatrix::RevMatForm::ShowMatrix(int SizeMatrix, Matrix MainMatrix, in
         {
             for (int j = 0; j < SizeMatrix; j++)
             {
-                //Назва таблиці у лівому кутку
-                ReverseMatrixGridView->TopLeftHeaderCell->Value = "Головна матриця";
-                //Номери столбців
-                ReverseMatrixGridView->Columns[j]->HeaderCell->Value = Convert::ToString(j + 1);
-                //Номери рядків
-                ReverseMatrixGridView->Rows[i]->HeaderCell->Value = Convert::ToString(i + 1);
                 //Значення матриці
                 ReverseMatrixGridView->Rows[i]->Cells[j]->Value = MainMatrix.GetArr()[i][j];
             }

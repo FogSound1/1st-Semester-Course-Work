@@ -130,7 +130,7 @@ namespace ReverseMatrix {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(45, 274);
+			this->label1->Location = System::Drawing::Point(45, 194);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(34, 20);
 			this->label1->TabIndex = 111;
@@ -140,18 +140,18 @@ namespace ReverseMatrix {
 			// 
 			this->MatrixAView->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->MatrixAView->ColumnHeadersVisible = false;
-			this->MatrixAView->Location = System::Drawing::Point(84, 337);
+			this->MatrixAView->Location = System::Drawing::Point(84, 262);
 			this->MatrixAView->Name = L"MatrixAView";
 			this->MatrixAView->RowHeadersVisible = false;
 			this->MatrixAView->RowHeadersWidth = 62;
 			this->MatrixAView->RowTemplate->Height = 28;
-			this->MatrixAView->Size = System::Drawing::Size(294, 256);
+			this->MatrixAView->Size = System::Drawing::Size(339, 310);
 			this->MatrixAView->TabIndex = 112;
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(45, 443);
+			this->label2->Location = System::Drawing::Point(32, 392);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(33, 20);
 			this->label2->TabIndex = 113;
@@ -161,30 +161,30 @@ namespace ReverseMatrix {
 			// 
 			this->UView->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->UView->ColumnHeadersVisible = false;
-			this->UView->Location = System::Drawing::Point(579, 387);
+			this->UView->Location = System::Drawing::Point(1044, 365);
 			this->UView->Name = L"UView";
 			this->UView->RowHeadersVisible = false;
 			this->UView->RowHeadersWidth = 62;
 			this->UView->RowTemplate->Height = 28;
-			this->UView->Size = System::Drawing::Size(240, 150);
+			this->UView->Size = System::Drawing::Size(117, 336);
 			this->UView->TabIndex = 114;
 			// 
 			// VView
 			// 
 			this->VView->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->VView->ColumnHeadersVisible = false;
-			this->VView->Location = System::Drawing::Point(579, 575);
+			this->VView->Location = System::Drawing::Point(468, 392);
 			this->VView->Name = L"VView";
 			this->VView->RowHeadersVisible = false;
 			this->VView->RowHeadersWidth = 62;
 			this->VView->RowTemplate->Height = 28;
-			this->VView->Size = System::Drawing::Size(240, 150);
+			this->VView->Size = System::Drawing::Size(502, 111);
 			this->VView->TabIndex = 115;
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(540, 452);
+			this->label3->Location = System::Drawing::Point(987, 546);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(34, 20);
 			this->label3->TabIndex = 116;
@@ -193,7 +193,7 @@ namespace ReverseMatrix {
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(540, 638);
+			this->label4->Location = System::Drawing::Point(429, 447);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(33, 20);
 			this->label4->TabIndex = 117;
@@ -201,21 +201,21 @@ namespace ReverseMatrix {
 			// 
 			// IterText
 			// 
-			this->IterText->Location = System::Drawing::Point(84, 274);
+			this->IterText->Location = System::Drawing::Point(84, 194);
 			this->IterText->Name = L"IterText";
 			this->IterText->Size = System::Drawing::Size(100, 26);
 			this->IterText->TabIndex = 118;
 			// 
 			// AkkText
 			// 
-			this->AkkText->Location = System::Drawing::Point(84, 630);
+			this->AkkText->Location = System::Drawing::Point(496, 546);
 			this->AkkText->Name = L"AkkText";
 			this->AkkText->Size = System::Drawing::Size(100, 26);
 			this->AkkText->TabIndex = 119;
 			// 
 			// AkText
 			// 
-			this->AkText->Location = System::Drawing::Point(377, 630);
+			this->AkText->Location = System::Drawing::Point(789, 546);
 			this->AkText->Name = L"AkText";
 			this->AkText->Size = System::Drawing::Size(100, 26);
 			this->AkText->TabIndex = 120;
@@ -223,7 +223,7 @@ namespace ReverseMatrix {
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(29, 630);
+			this->label5->Location = System::Drawing::Point(441, 546);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(51, 20);
 			this->label5->TabIndex = 121;
@@ -232,7 +232,7 @@ namespace ReverseMatrix {
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(225, 630);
+			this->label6->Location = System::Drawing::Point(637, 546);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(136, 20);
 			this->label6->TabIndex = 122;
@@ -241,16 +241,16 @@ namespace ReverseMatrix {
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(5, 948);
+			this->label7->Location = System::Drawing::Point(26, 935);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(117, 20);
+			this->label7->Size = System::Drawing::Size(113, 20);
 			this->label7->TabIndex = 126;
-			this->label7->Text = L"q = -1/ak V A = ";
+			this->label7->Text = L"q = -1/ak V A =";
 			// 
 			// label8
 			// 
 			this->label8->AutoSize = true;
-			this->label8->Location = System::Drawing::Point(5, 762);
+			this->label8->Location = System::Drawing::Point(168, 726);
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(110, 20);
 			this->label8->TabIndex = 125;
@@ -260,30 +260,30 @@ namespace ReverseMatrix {
 			// 
 			this->qView->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->qView->ColumnHeadersVisible = false;
-			this->qView->Location = System::Drawing::Point(121, 895);
+			this->qView->Location = System::Drawing::Point(145, 894);
 			this->qView->Name = L"qView";
 			this->qView->RowHeadersVisible = false;
 			this->qView->RowHeadersWidth = 62;
 			this->qView->RowTemplate->Height = 28;
-			this->qView->Size = System::Drawing::Size(240, 147);
+			this->qView->Size = System::Drawing::Size(552, 106);
 			this->qView->TabIndex = 124;
 			// 
 			// rView
 			// 
 			this->rView->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->rView->ColumnHeadersVisible = false;
-			this->rView->Location = System::Drawing::Point(121, 707);
+			this->rView->Location = System::Drawing::Point(296, 587);
 			this->rView->Name = L"rView";
 			this->rView->RowHeadersVisible = false;
 			this->rView->RowHeadersWidth = 62;
 			this->rView->RowTemplate->Height = 28;
-			this->rView->Size = System::Drawing::Size(240, 147);
+			this->rView->Size = System::Drawing::Size(177, 301);
 			this->rView->TabIndex = 123;
 			// 
 			// label9
 			// 
 			this->label9->AutoSize = true;
-			this->label9->Location = System::Drawing::Point(399, 859);
+			this->label9->Location = System::Drawing::Point(589, 821);
 			this->label9->Name = L"label9";
 			this->label9->Size = System::Drawing::Size(128, 20);
 			this->label9->TabIndex = 128;
@@ -293,18 +293,18 @@ namespace ReverseMatrix {
 			// 
 			this->BView->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->BView->ColumnHeadersVisible = false;
-			this->BView->Location = System::Drawing::Point(533, 804);
+			this->BView->Location = System::Drawing::Point(723, 715);
 			this->BView->Name = L"BView";
 			this->BView->RowHeadersVisible = false;
 			this->BView->RowHeadersWidth = 62;
 			this->BView->RowTemplate->Height = 28;
-			this->BView->Size = System::Drawing::Size(240, 147);
+			this->BView->Size = System::Drawing::Size(409, 285);
 			this->BView->TabIndex = 127;
 			// 
 			// label10
 			// 
 			this->label10->AutoSize = true;
-			this->label10->Location = System::Drawing::Point(851, 874);
+			this->label10->Location = System::Drawing::Point(1161, 859);
 			this->label10->Name = L"label10";
 			this->label10->Size = System::Drawing::Size(41, 20);
 			this->label10->TabIndex = 130;
@@ -314,17 +314,17 @@ namespace ReverseMatrix {
 			// 
 			this->AkGrid->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->AkGrid->ColumnHeadersVisible = false;
-			this->AkGrid->Location = System::Drawing::Point(898, 762);
+			this->AkGrid->Location = System::Drawing::Point(1208, 671);
 			this->AkGrid->Name = L"AkGrid";
 			this->AkGrid->RowHeadersVisible = false;
 			this->AkGrid->RowHeadersWidth = 62;
 			this->AkGrid->RowTemplate->Height = 28;
-			this->AkGrid->Size = System::Drawing::Size(294, 256);
+			this->AkGrid->Size = System::Drawing::Size(432, 353);
 			this->AkGrid->TabIndex = 129;
 			// 
 			// IterButton
 			// 
-			this->IterButton->Location = System::Drawing::Point(1091, 508);
+			this->IterButton->Location = System::Drawing::Point(1568, 512);
 			this->IterButton->Name = L"IterButton";
 			this->IterButton->Size = System::Drawing::Size(127, 54);
 			this->IterButton->TabIndex = 131;
@@ -345,22 +345,21 @@ namespace ReverseMatrix {
 			// 
 			this->MainMatrixE->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->MainMatrixE->ColumnHeadersVisible = false;
-			this->MainMatrixE->Location = System::Drawing::Point(473, 38);
+			this->MainMatrixE->Location = System::Drawing::Point(470, 38);
 			this->MainMatrixE->Name = L"MainMatrixE";
 			this->MainMatrixE->RowHeadersVisible = false;
 			this->MainMatrixE->RowHeadersWidth = 62;
 			this->MainMatrixE->RowTemplate->Height = 28;
-			this->MainMatrixE->Size = System::Drawing::Size(346, 294);
+			this->MainMatrixE->Size = System::Drawing::Size(388, 326);
 			this->MainMatrixE->TabIndex = 132;
 			// 
 			// menuStrip1
 			// 
-			this->menuStrip1->GripMargin = System::Windows::Forms::Padding(2, 2, 0, 2);
 			this->menuStrip1->ImageScalingSize = System::Drawing::Size(24, 24);
 			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->âèõ³äToolStripMenuItem });
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(1230, 33);
+			this->menuStrip1->Size = System::Drawing::Size(1707, 33);
 			this->menuStrip1->TabIndex = 134;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -376,7 +375,7 @@ namespace ReverseMatrix {
 			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoScroll = true;
-			this->ClientSize = System::Drawing::Size(1230, 1050);
+			this->ClientSize = System::Drawing::Size(1707, 1050);
 			this->Controls->Add(this->label11);
 			this->Controls->Add(this->MainMatrixE);
 			this->Controls->Add(this->IterButton);

@@ -42,55 +42,37 @@ bool UnAcceptable(Matrix MainMatrix, int type) //Перевірка матриці на визначники
 	}
 	if (type == 2 || type == 3)
 	{
-		if (MainMatrix.GetArr()[MainMatrix.GetRow() - 1][MainMatrix.GetColumn() - 1] == 0)
+		if (MainMatrix.GetRow() == 1)
+		{
+			if (MainMatrix.GetArr()[0][0] == 0)
+			{
+				return true;
+			}
+		}
+
+		Matrix MatrixCell22 = CellDivisionInitialization(MainMatrix, 4);
+		Matrix MatrixCell12 = CellDivisionInitialization(MainMatrix, 2);
+		Matrix MatrixCell21 = CellDivisionInitialization(MainMatrix, 3);
+		Matrix MatrixCell11 = CellDivisionInitialization(MainMatrix, 1);
+		
+		if (MatrixCell22.Det() == 0)
+		{
+			return true;
+		}
+		if (MatrixCell22.GetArr()[MatrixCell22.GetRow() - 1][MatrixCell22.GetColumn() - 1] == 0)
 		{
 			return true;;
 		}
-		if (MainMatrix.GetRow() % 2 == 0)
-		{
-			Matrix MatrixCell(MainMatrix.GetRow() / 2, MainMatrix.GetRow() / 2);
-			for (int i = MainMatrix.GetRow() / 2; i < MainMatrix.GetRow(); i++)
-			{
-				for (int j = MainMatrix.GetRow() / 2; j < MainMatrix.GetRow(); j++)
-				{
 
-					if (i >= MainMatrix.GetRow() / 2 && j >= MainMatrix.GetRow() / 2)
-					{
-						MatrixCell.GetArr()[i - (MainMatrix.GetRow() / 2)][j - (MainMatrix.GetRow() / 2)] = MainMatrix.GetArr()[i][j];
-					}
-				}
-			}
-			if (MatrixCell.Det() == 0)
-			{
-				return true;
-			}
-			if (MatrixCell.GetArr()[MatrixCell.GetRow() - 1][MatrixCell.GetColumn() - 1] == 0)
-			{
-				return true;;
-			}
+		Matrix MatrixR11 = MatrixCell11 - (MatrixCell12 * (CellDivision(MatrixCell22) * MatrixCell21));
+		if (MatrixR11.GetArr()[MatrixR11.GetRow() - 1][MatrixR11.GetColumn() - 1] == 0)
+		{
+			return true;
 		}
-		else
-		{
-			Matrix MatrixCell(MainMatrix.GetRow() / 2, MainMatrix.GetRow() / 2);
-			for (int i = MainMatrix.GetRow() / 2 + 1; i < MainMatrix.GetRow(); i++)
-			{
-				for (int j = MainMatrix.GetRow() / 2 + 1; j < MainMatrix.GetRow(); j++)
-				{
 
-					if (i >= MainMatrix.GetRow() / 2 + 1 && j >= MainMatrix.GetRow() / 2 + 1)
-					{
-						MatrixCell.GetArr()[i - (MainMatrix.GetRow() / 2 + 1)][j - (MainMatrix.GetRow() / 2 + 1)] = MainMatrix.GetArr()[i][j];
-					}
-				}
-			}
-			if (MatrixCell.Det() == 0)
-			{
-				return true;
-			}
-			if (MatrixCell.GetArr()[MatrixCell.GetRow() - 1][MatrixCell.GetColumn() - 1] == 0)
-			{
-				return true;;
-			}
+		if (UnAcceptable(MatrixCell22, 2))
+		{
+			return true;
 		}
 	}
 }
