@@ -7,9 +7,9 @@
 #include <string>
 using namespace std;
 
-//Функції класу Matrix
+//Р¤СѓРЅРєС†С–С— РєР»Р°СЃСѓ Matrix
 
-Matrix::Matrix(int RowNumber, int ColumnNumber) //Конструктор класу
+Matrix::Matrix(int RowNumber, int ColumnNumber) //РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєР»Р°СЃСѓ
 {
 	Row = RowNumber;
 	Column = ColumnNumber;
@@ -21,7 +21,7 @@ Matrix::Matrix(int RowNumber, int ColumnNumber) //Конструктор класу
 	}
 }
 
-Matrix::~Matrix() //Деструктор класу
+Matrix::~Matrix() //Р”РµСЃС‚СЂСѓРєС‚РѕСЂ РєР»Р°СЃСѓ
 {
 	for (int i = 0; i < Row; i++)
 	{
@@ -30,7 +30,7 @@ Matrix::~Matrix() //Деструктор класу
 	delete[] Arr;
 }
 
-Matrix::Matrix(const Matrix& matrix)  //Конструктор копіювання
+Matrix::Matrix(const Matrix& matrix)  //РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїС–СЋРІР°РЅРЅСЏ
 {
 	this->Row = matrix.Row;
 	this->Column = matrix.Column;
@@ -48,7 +48,7 @@ Matrix::Matrix(const Matrix& matrix)  //Конструктор копіювання
 	}
 }
 
-void Matrix::ArrGenAuto(int RangeMin, int RangeMax) //Генерація матриці випадковим чином
+void Matrix::ArrGenAuto(int RangeMin, int RangeMax) //Р“РµРЅРµСЂР°С†С–СЏ РјР°С‚СЂРёС†С– РІРёРїР°РґРєРѕРІРёРј С‡РёРЅРѕРј
 {
 	srand(time(NULL));
 	for (int k = 0; ; k++)
@@ -78,7 +78,7 @@ void Matrix::ArrGenAuto(int RangeMin, int RangeMax) //Генерація матриці випадков
 	}
 }
 
-int Matrix::Det() //Функція знаходження визначника матриці
+int Matrix::Det() //Р¤СѓРЅРєС†С–СЏ Р·РЅР°С…РѕРґР¶РµРЅРЅСЏ РІРёР·РЅР°С‡РЅРёРєР° РјР°С‚СЂРёС†С–
 {
 	int temp = 0;
 	int k = 1;
@@ -106,7 +106,7 @@ int Matrix::Det() //Функція знаходження визначника матриці
 	return temp;
 }
 
-//Функція викреслення рядка та стовпця
+//Р¤СѓРЅРєС†С–СЏ РІРёРєСЂРµСЃР»РµРЅРЅСЏ СЂСЏРґРєР° С‚Р° СЃС‚РѕРІРїС†СЏ
 void Matrix::GetMatr(Matrix CurrentMatrix, int IndRow, int IndCol)
 {
 	int ki = 0;
@@ -127,22 +127,22 @@ void Matrix::GetMatr(Matrix CurrentMatrix, int IndRow, int IndCol)
 	}
 }
 
-int Matrix::GetRow() //Гетер рядків матриці
+int Matrix::GetRow() //Р“РµС‚РµСЂ СЂСЏРґРєС–РІ РјР°С‚СЂРёС†С–
 {
 	return Row;
 }
 
-int Matrix::GetColumn() //Гетер стовпців матриці
+int Matrix::GetColumn() //Р“РµС‚РµСЂ СЃС‚РѕРІРїС†С–РІ РјР°С‚СЂРёС†С–
 {
 	return Column;
 }
 
-double** Matrix::GetArr() //Гетер матрциі
+double** Matrix::GetArr() //Р“РµС‚РµСЂ РјР°С‚СЂС†РёС–
 {
 	return Arr;
 }
 
-Matrix Matrix::operator - (const Matrix& matrix) //Перевантаження оператора віднімання
+Matrix Matrix::operator - (const Matrix& matrix) //РџРµСЂРµРІР°РЅС‚Р°Р¶РµРЅРЅСЏ РѕРїРµСЂР°С‚РѕСЂР° РІС–РґРЅС–РјР°РЅРЅСЏ
 {
 	Matrix NewMatrix(matrix.Row, matrix.Column);
 	for (int i = 0; i < Row; i++)
@@ -155,7 +155,7 @@ Matrix Matrix::operator - (const Matrix& matrix) //Перевантаження оператора відн
 	return NewMatrix;
 }
 
-Matrix Matrix::operator * (const Matrix& matrix) //Перевантаження оператора для множення двох матриць 
+Matrix Matrix::operator * (const Matrix& matrix) //РџРµСЂРµРІР°РЅС‚Р°Р¶РµРЅРЅСЏ РѕРїРµСЂР°С‚РѕСЂР° РґР»СЏ РјРЅРѕР¶РµРЅРЅСЏ РґРІРѕС… РјР°С‚СЂРёС†СЊ 
 {
 	Matrix NewMatrix(Row, matrix.Column);
 	NewMatrix.ArrGenAuto(0, 0);
@@ -172,7 +172,7 @@ Matrix Matrix::operator * (const Matrix& matrix) //Перевантаження оператора для 
 	return NewMatrix;
 }
 
-Matrix Matrix::operator * (double number) //Перевантаження оператора для множення матриці на число  
+Matrix Matrix::operator * (double number) //РџРµСЂРµРІР°РЅС‚Р°Р¶РµРЅРЅСЏ РѕРїРµСЂР°С‚РѕСЂР° РґР»СЏ РјРЅРѕР¶РµРЅРЅСЏ РјР°С‚СЂРёС†С– РЅР° С‡РёСЃР»Рѕ  
 {
 	Matrix NewMatrix(Row, Column);
 	for (int i = 0; i < Row; i++)
@@ -185,7 +185,7 @@ Matrix Matrix::operator * (double number) //Перевантаження оператора для множенн
 	return NewMatrix;
 }
 
-void Matrix::operator = (const Matrix& OtherMatrix) //Перевантаження оператора присвоєння  
+void Matrix::operator = (const Matrix& OtherMatrix) //РџРµСЂРµРІР°РЅС‚Р°Р¶РµРЅРЅСЏ РѕРїРµСЂР°С‚РѕСЂР° РїСЂРёСЃРІРѕС”РЅРЅСЏ  
 {
 	int OldRow = this->Row;
 	this->Row = OtherMatrix.Row;
