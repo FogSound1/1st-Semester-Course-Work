@@ -1,10 +1,6 @@
 #include <iostream>
-#include <iomanip>
 #include "Matrix.h"
 #include "RevMat.h"
-#include <ctime>
-#include <cmath>
-#include <string>
 using namespace std;
 
 //Функції класу Matrix

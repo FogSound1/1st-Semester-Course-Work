@@ -2,7 +2,6 @@
 #include "Matrix.h"
 #include "RevMat.h"
 #include <string>
-#include <Windows.h>
 #include <msclr/marshal_cppstd.h>
 
 using namespace std;
@@ -39,6 +38,12 @@ System::Void ReverseMatrix::RevMatForm::CreateMatrixButton_Click(System::Object^
 //Генерація матриці випадковим чином
 System::Void ReverseMatrix::RevMatForm::ArrGenAutoButton_Click(System::Object^ sender, System::EventArgs^ e)
 {
+    if (MainMatrixGridView->RowCount == 0)
+    {
+        MessageBox::Show("Матриця не створена");
+        return;
+    }
+
     int MaxNumber, MinNumber;
     MaxNumber = Convert::ToInt32(MaxNumberUpDown->Value);
     MinNumber = Convert::ToInt32(MinNumberUpDown->Value);
