@@ -43,7 +43,7 @@ System::Void ReverseMatrix::RevMatForm::ArrGenAutoButton_Click(System::Object^ s
     MaxNumber = Convert::ToInt32(MaxNumberUpDown->Value);
     MinNumber = Convert::ToInt32(MinNumberUpDown->Value);
 
-    if (MinNumber == MaxNumber)
+    if (MinNumber == MaxNumber || MinNumber > MaxNumber)
     {
         MessageBox::Show("Заданий діапазон не може згенерувати невироджену матрицю");
         return;
@@ -62,6 +62,12 @@ System::Void ReverseMatrix::RevMatForm::ArrGenAutoButton_Click(System::Object^ s
 //Обернення матриці методом окаймлення
 System::Void ReverseMatrix::RevMatForm::EmborderingButton_Click(System::Object^ sender, System::EventArgs^ e)
 {
+    if (BannedSymbols())
+    {
+        MessageBox::Show("Задана матриця містить некоректний символ");
+        return;
+    }
+
     Matrix  MainMatrix = GetMatrix(1);
     if (SolutionCheck->Checked)
     {
@@ -92,6 +98,12 @@ System::Void ReverseMatrix::RevMatForm::EmborderingButton_Click(System::Object^ 
 //Знаходженн матриці методом робиття на клітки
 System::Void ReverseMatrix::RevMatForm::CellDivisionButton_Click(System::Object^ sender, System::EventArgs^ e)
 {
+    if (BannedSymbols())
+    {
+        MessageBox::Show("Задана матриця містить некоректний символ");
+        return;
+    }
+
     Matrix  MainMatrix = GetMatrix(1);
     if (SolutionCheck->Checked)
     {
@@ -194,8 +206,36 @@ System::Void ReverseMatrix::RevMatForm::WriteFileButton_Click(System::Object^ se
     return System::Void();
 }
 
+
 //Вихід
 System::Void ReverseMatrix::RevMatForm::вихідToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
 {
     Application::Exit();
+}
+
+//Перевірка матриці на некоректні символи
+bool ReverseMatrix::RevMatForm::BannedSymbols()
+{
+    string TrueSymbols = "0 1 2 3 4 5 6 7 8 9 ,";
+    string minus = "-";
+    string Check;
+
+    for (int i = 0; i < MainMatrixGridView->RowCount; i++)
+    {
+        for (int j = 0; j < MainMatrixGridView->ColumnCount; j++)
+        {
+            Check = marshal_as<string>(Convert::ToString(MainMatrixGridView->Rows[i]->Cells[j]->Value));
+            for (int k = 0; k < Check.length(); k++)
+            {
+                if (TrueSymbols.find(Check[k]) == string::npos)
+                {
+                    if (k == 0 && minus.find(Check[k]) != string::npos)
+                    {
+                        continue;
+                    }
+                    return true;
+                }
+            }
+        }
+    }
 }
