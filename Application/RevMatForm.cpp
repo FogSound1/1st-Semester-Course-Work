@@ -89,6 +89,7 @@ System::Void ReverseMatrix::RevMatForm::EmborderingButton_Click(System::Object^ 
     return System::Void();
 }
 
+//Знаходженн матриці методом робиття на клітки
 System::Void ReverseMatrix::RevMatForm::CellDivisionButton_Click(System::Object^ sender, System::EventArgs^ e)
 {
     Matrix  MainMatrix = GetMatrix(1);
@@ -144,6 +145,7 @@ void ReverseMatrix::RevMatForm::ShowMatrix(int SizeMatrix, Matrix MainMatrix, in
     }
 }
 
+//Зчитування матриці з DataGridView
 Matrix ReverseMatrix::RevMatForm::GetMatrix(int type)
 {
     Matrix SomeMatrix(MainMatrixGridView->RowCount, MainMatrixGridView->ColumnCount);
@@ -172,6 +174,7 @@ Matrix ReverseMatrix::RevMatForm::GetMatrix(int type)
     return SomeMatrix;
 }
 
+//Запис оберненої матриці у файл
 System::Void ReverseMatrix::RevMatForm::WriteFileButton_Click(System::Object^ sender, System::EventArgs^ e)
 {
     Matrix ReverseMatrix = GetMatrix(2);
@@ -191,6 +194,7 @@ System::Void ReverseMatrix::RevMatForm::WriteFileButton_Click(System::Object^ se
     return System::Void();
 }
 
+//Вихід
 System::Void ReverseMatrix::RevMatForm::вихідToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
 {
     Application::Exit();
