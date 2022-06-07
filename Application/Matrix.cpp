@@ -63,7 +63,7 @@ void Matrix::ArrGenAuto(int RangeMin, int RangeMax) //Генерація мат�
 				}
 				else
 				{
-					Arr[i][j] = RangeMin + rand() % RangeMax;
+					Arr[i][j] = rand() % (RangeMax - RangeMin + 1) + RangeMin;
 				}
 			}
 		}
