@@ -17,7 +17,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
     return 0;
 }
 
-//—Ú‚ÓÂÌÌˇ Ï‡ÚËˆ≥
+//–°—Ç–≤–æ—Ä–µ–Ω–Ω—è –º–∞—Ç—Ä–∏—Ü—ñ
 System::Void ReverseMatrix::RevMatForm::CreateMatrixButton_Click(System::Object^ sender, System::EventArgs^ e)
 {
     int SizeMatrix;
@@ -28,32 +28,38 @@ System::Void ReverseMatrix::RevMatForm::CreateMatrixButton_Click(System::Object^
     MainMatrixGridView->RowCount = SizeMatrix;
     MainMatrixGridView->ColumnCount = SizeMatrix;
 
-    ShowMatrix(SizeMatrix, MainMatrix, 1); //¬Ë‚Ó‰ËÏ Ï‡ÚËˆ˛
-    //ﬂ˜ÂÈÍË
+    ShowMatrix(SizeMatrix, MainMatrix, 1); //–í–∏–≤–æ–¥–∏–º –º–∞—Ç—Ä–∏—Ü—é
+    //–Ø—á–µ–π–∫–∏
     MainMatrixGridView->AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode::AutoSizeToAllHeaders);
-    MainMatrixGridView->AutoResizeColumns();//—ÚÓ‚·ˆ≥
+    MainMatrixGridView->AutoResizeColumns();//–°—Ç–æ–≤–±—Ü—ñ
     
     return System::Void();
 }
 
-//√ÂÌÂ‡ˆ≥ˇ Ï‡ÚËˆ≥ ‚ËÔ‡‰ÍÓ‚ËÏ ˜ËÌÓÏ
+//–ì–µ–Ω–µ—Ä–∞—Ü—ñ—è –º–∞—Ç—Ä–∏—Ü—ñ –≤–∏–ø–∞–¥–∫–æ–≤–∏–º —á–∏–Ω–æ–º
 System::Void ReverseMatrix::RevMatForm::ArrGenAutoButton_Click(System::Object^ sender, System::EventArgs^ e)
 {
     int MaxNumber, MinNumber;
     MaxNumber = Convert::ToInt32(MaxNumberUpDown->Value);
     MinNumber = Convert::ToInt32(MinNumberUpDown->Value);
 
+    if (MinNumber == MaxNumber)
+    {
+        MessageBox::Show("–ó–∞–¥–∞–Ω–∏–π –¥—ñ–∞–ø–∞–∑–æ–Ω –Ω–µ –º–æ–∂–µ –∑–≥–µ–Ω–µ—Ä—É–≤–∞—Ç–∏ –Ω–µ–≤–∏—Ä–æ–¥–∂–µ–Ω—É –º–∞—Ç—Ä–∏—Ü—é");
+        return;
+    }
+
     Matrix MainMatrix = GetMatrix(1);
     MainMatrix.ArrGenAuto(MinNumber, MaxNumber);
 
-    ShowMatrix(MainMatrix.GetRow(), MainMatrix, 1); //¬Ë‚Ó‰ËÏ Ï‡ÚËˆ˛
-    //ﬂ˜ÂÈÍË
+    ShowMatrix(MainMatrix.GetRow(), MainMatrix, 1); //–í–∏–≤–æ–¥–∏–º –º–∞—Ç—Ä–∏—Ü—é
+    //–Ø—á–µ–π–∫–∏
     MainMatrixGridView->AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode::AutoSizeToAllHeaders);
-    MainMatrixGridView->AutoResizeColumns();//—ÚÓ‚·ˆ≥
+    MainMatrixGridView->AutoResizeColumns();//–°—Ç–æ–≤–±—Ü—ñ
     return System::Void();
 }
 
-//Œ·ÂÌÂÌÌˇ Ï‡ÚËˆ≥ ÏÂÚÓ‰ÓÏ ÓÍ‡ÈÏÎÂÌÌˇ
+//–û–±–µ—Ä–Ω–µ–Ω–Ω—è –º–∞—Ç—Ä–∏—Ü—ñ –º–µ—Ç–æ–¥–æ–º –æ–∫–∞–π–º–ª–µ–Ω–Ω—è
 System::Void ReverseMatrix::RevMatForm::EmborderingButton_Click(System::Object^ sender, System::EventArgs^ e)
 {
     Matrix  MainMatrix = GetMatrix(1);
@@ -65,7 +71,7 @@ System::Void ReverseMatrix::RevMatForm::EmborderingButton_Click(System::Object^ 
 
     if (UnAcceptable(MainMatrix, 1))
     {
-        MessageBox::Show("«‡‰‡Ì‡ Ï‡ÚËˆˇ ÌÂ Ô≥‰ıÓ‰ËÚ¸ ‰Îˇ ‰‡ÌÓ„Ó ÏÂÚÓ‰Û");
+        MessageBox::Show("–ó–∞–¥–∞–Ω–∞ –º–∞—Ç—Ä–∏—Ü—è –Ω–µ –ø—ñ–¥—Ö–æ–¥–∏—Ç—å –¥–ª—è –¥–∞–Ω–æ–≥–æ –º–µ—Ç–æ–¥—É");
         return;
     }
     else
@@ -75,9 +81,9 @@ System::Void ReverseMatrix::RevMatForm::EmborderingButton_Click(System::Object^ 
         ReverseMatrixGridView->ColumnCount = ReverseMatrix.GetRow();
 
         ShowMatrix(ReverseMatrix.GetRow(), ReverseMatrix, 2);
-        //ﬂ˜ÂÈÍË
+        //–Ø—á–µ–π–∫–∏
         MainMatrixGridView->AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode::AutoSizeToAllHeaders);
-        MainMatrixGridView->AutoResizeColumns();//—ÚÓ‚·ˆ≥
+        MainMatrixGridView->AutoResizeColumns();//–°—Ç–æ–≤–±—Ü—ñ
     }
 
     return System::Void();
@@ -94,7 +100,7 @@ System::Void ReverseMatrix::RevMatForm::CellDivisionButton_Click(System::Object^
 
     if (UnAcceptable(MainMatrix, 2))
     {
-        MessageBox::Show("«‡‰‡Ì‡ Ï‡ÚËˆˇ ÌÂ Ô≥‰ıÓ‰ËÚ¸ ‰Îˇ ‰‡ÌÓ„Ó ÏÂÚÓ‰Û");
+        MessageBox::Show("–ó–∞–¥–∞–Ω–∞ –º–∞—Ç—Ä–∏—Ü—è –Ω–µ –ø—ñ–¥—Ö–æ–¥–∏—Ç—å –¥–ª—è –¥–∞–Ω–æ–≥–æ –º–µ—Ç–æ–¥—É");
         return;
     }
     else
@@ -104,14 +110,14 @@ System::Void ReverseMatrix::RevMatForm::CellDivisionButton_Click(System::Object^
         ReverseMatrixGridView->ColumnCount = ReverseMatrix.GetRow();
 
         ShowMatrix(ReverseMatrix.GetRow(), ReverseMatrix, 2);
-        //ﬂ˜ÂÈÍË
+        //–Ø—á–µ–π–∫–∏
         ReverseMatrixGridView->AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode::AutoSizeToAllHeaders);
-        ReverseMatrixGridView->AutoResizeColumns();//—ÚÓ‚·ˆ≥
+        ReverseMatrixGridView->AutoResizeColumns();//–°—Ç–æ–≤–±—Ü—ñ
     }
     return System::Void();
 }
 
-//¬Ë‚Ó‰ Ï‡ÚËˆ≥
+//–í–∏–≤–æ–¥ –º–∞—Ç—Ä–∏—Ü—ñ
 void ReverseMatrix::RevMatForm::ShowMatrix(int SizeMatrix, Matrix MainMatrix, int type)
 {
     if (type == 1)
@@ -120,7 +126,7 @@ void ReverseMatrix::RevMatForm::ShowMatrix(int SizeMatrix, Matrix MainMatrix, in
         {
             for (int j = 0; j < SizeMatrix; j++)
             {
-                //«Ì‡˜ÂÌÌˇ Ï‡ÚËˆ≥
+                //–ó–Ω–∞—á–µ–Ω–Ω—è –º–∞—Ç—Ä–∏—Ü—ñ
                 MainMatrixGridView->Rows[i]->Cells[j]->Value = MainMatrix.GetArr()[i][j];
             }
         }
@@ -131,7 +137,7 @@ void ReverseMatrix::RevMatForm::ShowMatrix(int SizeMatrix, Matrix MainMatrix, in
         {
             for (int j = 0; j < SizeMatrix; j++)
             {
-                //«Ì‡˜ÂÌÌˇ Ï‡ÚËˆ≥
+                //–ó–Ω–∞—á–µ–Ω–Ω—è –º–∞—Ç—Ä–∏—Ü—ñ
                 ReverseMatrixGridView->Rows[i]->Cells[j]->Value = MainMatrix.GetArr()[i][j];
             }
         }
@@ -174,18 +180,18 @@ System::Void ReverseMatrix::RevMatForm::WriteFileButton_Click(System::Object^ se
     int result = WriteFile(ReverseMatrix, FileName);
     if (result == 1)
     {
-        MessageBox::Show("‘‡ÈÎ ÌÂ ÁÌ‡È‰ÂÌËÈ");
+        MessageBox::Show("–§–∞–π–ª –Ω–µ –∑–Ω–∞–π–¥–µ–Ω–∏–π");
         return;
     }
     else
     {
-        MessageBox::Show("Ã‡ÚËˆˇ ÛÒÔ≥¯ÌÓ Á‡ÔËÒ‡Ì‡ Û Ù‡ÈÎ ", FileNameTextBox->Text);
+        MessageBox::Show("–ú–∞—Ç—Ä–∏—Ü—è —É—Å–ø—ñ—à–Ω–æ –∑–∞–ø–∏—Å–∞–Ω–∞ —É —Ñ–∞–π–ª ", FileNameTextBox->Text);
         return;
     }
     return System::Void();
 }
 
-System::Void ReverseMatrix::RevMatForm::‚Ëı≥‰ToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
+System::Void ReverseMatrix::RevMatForm::–≤–∏—Ö—ñ–¥ToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
 {
     Application::Exit();
 }
