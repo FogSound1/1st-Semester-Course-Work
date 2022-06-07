@@ -1,4 +1,5 @@
 #include "EmborderingSolution.h"
+#include "RevMat.h"
 
 void ReverseMatrix::EmborderingSolution::Esolution(Matrix MainMatrix, int iter)
 {
@@ -75,9 +76,9 @@ void ReverseMatrix::EmborderingSolution::Esolution(Matrix MainMatrix, int iter)
 			V.GetArr()[0][i] = A.GetArr()[k][i];
 		}
 		double akk = a - (V * OldA * U).GetArr()[0][0];
-		Matrix r = OldA * U * (-1 / akk);
-		Matrix q = V * OldA * (-1 / akk);
-		Matrix B = OldA - (OldA * U) * q;
+		Matrix r = MachineZero(OldA * U * (-1 / akk));
+		Matrix q = MachineZero(V * OldA * (-1 / akk));
+		Matrix B = MachineZero(OldA - (OldA * U) * q);
 
 
 		for (int i = 0; i < k; i++)

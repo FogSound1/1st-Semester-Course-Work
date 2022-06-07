@@ -335,7 +335,7 @@ namespace ReverseMatrix {
 			// label11
 			// 
 			this->label11->AutoSize = true;
-			this->label11->Location = System::Drawing::Point(575, 15);
+			this->label11->Location = System::Drawing::Point(589, 15);
 			this->label11->Name = L"label11";
 			this->label11->Size = System::Drawing::Size(142, 20);
 			this->label11->TabIndex = 133;
@@ -355,6 +355,7 @@ namespace ReverseMatrix {
 			// 
 			// menuStrip1
 			// 
+			this->menuStrip1->GripMargin = System::Windows::Forms::Padding(2, 2, 0, 2);
 			this->menuStrip1->ImageScalingSize = System::Drawing::Size(24, 24);
 			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->âèõ³äToolStripMenuItem });
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);

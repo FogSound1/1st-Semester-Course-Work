@@ -1,13 +1,13 @@
 #pragma once
 #include <string>
 
-bool DoubleZero(double number); //РџРµСЂРµРІС–СЂРєР° РЅР° РјР°С€РёРЅРЅС– РЅСѓР»С– Сѓ РјР°С‚СЂРёС†С–
-bool UnAcceptable(Matrix MainMatrix, int type); //РџРµСЂРµРІС–СЂРєР° РјР°С‚СЂРёС†С– РЅР° РІРёР·РЅР°С‡РЅРёРєРё СЂС–Р·РЅРёС… С—С— С‡Р°СЃС‚РёРЅ
-Matrix MachineZero(Matrix CurrentMatrix); //Р—Р°РјС–РЅР° СѓСЃС–С… РјР°С€РёРЅРЅРёС… РЅСѓР»РµР№ РЅР° Р·РІРёС‡Р°Р№РЅС–
-Matrix Embordering(Matrix MainMatrix); //РњРµС‚РѕРґ РѕРєР°Р№РјР»РµРЅРЅСЏ
-Matrix CellDivisionInitialization(Matrix MainMatrix, int number); //Р РѕР·Р±РёС‚С‚СЏ РјР°С‚СЂРёС†С– РЅР° РєР»С–С‚РєРё
-//Р—С–Р±СЂР°РЅРЅСЏ РєР»С–С‚РѕРє РІ РѕРґРЅСѓ
+bool DoubleZero(double number); //Перевірка на машинні нулі у матриці
+bool UnAcceptable(Matrix MainMatrix, int type); //Перевірка матриці на визначники різних її частин
+Matrix MachineZero(Matrix CurrentMatrix); //Заміна усіх машинних нулей на звичайні
+Matrix Embordering(Matrix MainMatrix); //Метод окаймлення
+Matrix CellDivisionInitialization(Matrix MainMatrix, int number); //Розбиття матриці на клітки
+//Зібрання кліток в одну
 Matrix CellDivisionBuild(Matrix MainMatrix, Matrix MatrixR11, Matrix MatrixR12, Matrix MatrixR21, Matrix MatrixR22);
-//Р—РЅР°С…РѕРґР¶РµРЅРЅСЏ РјР°С‚СЂРёС†С– РјРµС‚РѕРґРѕРј СЂРѕР·Р±РёС‚С‚СЏ РЅР° РєР»С–С‚РєРё
+//Знаходження матриці методом розбиття на клітки
 Matrix CellDivision(Matrix MainMatrix);
-int WriteFile(Matrix ReverseMatrix, std::string FileName); //Р¤СѓРЅРєС†С–СЏ Р·Р°РїРёСЃСѓ Сѓ С„Р°Р№Р»
+int WriteFile(Matrix ReverseMatrix, std::string FileName); //Функція запису у файл

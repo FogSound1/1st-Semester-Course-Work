@@ -17,7 +17,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
     return 0;
 }
 
-//РЎС‚РІРѕСЂРµРЅРЅСЏ РјР°С‚СЂРёС†С–
+//Створення матриці
 System::Void ReverseMatrix::RevMatForm::CreateMatrixButton_Click(System::Object^ sender, System::EventArgs^ e)
 {
     int SizeMatrix;
@@ -28,15 +28,15 @@ System::Void ReverseMatrix::RevMatForm::CreateMatrixButton_Click(System::Object^
     MainMatrixGridView->RowCount = SizeMatrix;
     MainMatrixGridView->ColumnCount = SizeMatrix;
 
-    ShowMatrix(SizeMatrix, MainMatrix, 1); //Р’РёРІРѕРґРёРј РјР°С‚СЂРёС†СЋ
-    //РЇС‡РµР№РєРё
+    ShowMatrix(SizeMatrix, MainMatrix, 1); //Виводим матрицю
+    //Ячейки
     MainMatrixGridView->AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode::AutoSizeToAllHeaders);
-    MainMatrixGridView->AutoResizeColumns();//РЎС‚РѕРІР±С†С–
+    MainMatrixGridView->AutoResizeColumns();//Стовбці
     
     return System::Void();
 }
 
-//Р“РµРЅРµСЂР°С†С–СЏ РјР°С‚СЂРёС†С– РІРёРїР°РґРєРѕРІРёРј С‡РёРЅРѕРј
+//Генерація матриці випадковим чином
 System::Void ReverseMatrix::RevMatForm::ArrGenAutoButton_Click(System::Object^ sender, System::EventArgs^ e)
 {
     int MaxNumber, MinNumber;
@@ -45,26 +45,26 @@ System::Void ReverseMatrix::RevMatForm::ArrGenAutoButton_Click(System::Object^ s
 
     if (MinNumber == MaxNumber || MinNumber > MaxNumber)
     {
-        MessageBox::Show("Р—Р°РґР°РЅРёР№ РґС–Р°РїР°Р·РѕРЅ РЅРµ РјРѕР¶Рµ Р·РіРµРЅРµСЂСѓРІР°С‚Рё РЅРµРІРёСЂРѕРґР¶РµРЅСѓ РјР°С‚СЂРёС†СЋ");
+        MessageBox::Show("Заданий діапазон не може згенерувати невироджену матрицю");
         return;
     }
 
     Matrix MainMatrix = GetMatrix(1);
     MainMatrix.ArrGenAuto(MinNumber, MaxNumber);
 
-    ShowMatrix(MainMatrix.GetRow(), MainMatrix, 1); //Р’РёРІРѕРґРёРј РјР°С‚СЂРёС†СЋ
-    //РЇС‡РµР№РєРё
+    ShowMatrix(MainMatrix.GetRow(), MainMatrix, 1); //Виводим матрицю
+    //Ячейки
     MainMatrixGridView->AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode::AutoSizeToAllHeaders);
-    MainMatrixGridView->AutoResizeColumns();//РЎС‚РѕРІР±С†С–
+    MainMatrixGridView->AutoResizeColumns();//Стовбці
     return System::Void();
 }
 
-//РћР±РµСЂРЅРµРЅРЅСЏ РјР°С‚СЂРёС†С– РјРµС‚РѕРґРѕРј РѕРєР°Р№РјР»РµРЅРЅСЏ
+//Обернення матриці методом окаймлення
 System::Void ReverseMatrix::RevMatForm::EmborderingButton_Click(System::Object^ sender, System::EventArgs^ e)
 {
     if (BannedSymbols())
     {
-        MessageBox::Show("Р—Р°РґР°РЅР° РјР°С‚СЂРёС†СЏ РјС–СЃС‚РёС‚СЊ РЅРµРєРѕСЂРµРєС‚РЅРёР№ СЃРёРјРІРѕР»");
+        MessageBox::Show("Задана матриця містить некоректний символ");
         return;
     }
 
@@ -77,7 +77,7 @@ System::Void ReverseMatrix::RevMatForm::EmborderingButton_Click(System::Object^ 
 
     if (UnAcceptable(MainMatrix, 1))
     {
-        MessageBox::Show("Р—Р°РґР°РЅР° РјР°С‚СЂРёС†СЏ РЅРµ РїС–РґС…РѕРґРёС‚СЊ РґР»СЏ РґР°РЅРѕРіРѕ РјРµС‚РѕРґСѓ");
+        MessageBox::Show("Задана матриця не підходить для даного методу");
         return;
     }
     else
@@ -87,20 +87,20 @@ System::Void ReverseMatrix::RevMatForm::EmborderingButton_Click(System::Object^ 
         ReverseMatrixGridView->ColumnCount = ReverseMatrix.GetRow();
 
         ShowMatrix(ReverseMatrix.GetRow(), ReverseMatrix, 2);
-        //РЇС‡РµР№РєРё
+        //Ячейки
         MainMatrixGridView->AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode::AutoSizeToAllHeaders);
-        MainMatrixGridView->AutoResizeColumns();//РЎС‚РѕРІР±С†С–
+        MainMatrixGridView->AutoResizeColumns();//Стовбці
     }
 
     return System::Void();
 }
 
-//Р—РЅР°С…РѕРґР¶РµРЅРЅ РјР°С‚СЂРёС†С– РјРµС‚РѕРґРѕРј СЂРѕР±РёС‚С‚СЏ РЅР° РєР»С–С‚РєРё
+//Знаходженн матриці методом робиття на клітки
 System::Void ReverseMatrix::RevMatForm::CellDivisionButton_Click(System::Object^ sender, System::EventArgs^ e)
 {
     if (BannedSymbols())
     {
-        MessageBox::Show("Р—Р°РґР°РЅР° РјР°С‚СЂРёС†СЏ РјС–СЃС‚РёС‚СЊ РЅРµРєРѕСЂРµРєС‚РЅРёР№ СЃРёРјРІРѕР»");
+        MessageBox::Show("Задана матриця містить некоректний символ");
         return;
     }
 
@@ -113,7 +113,7 @@ System::Void ReverseMatrix::RevMatForm::CellDivisionButton_Click(System::Object^
 
     if (UnAcceptable(MainMatrix, 2))
     {
-        MessageBox::Show("Р—Р°РґР°РЅР° РјР°С‚СЂРёС†СЏ РЅРµ РїС–РґС…РѕРґРёС‚СЊ РґР»СЏ РґР°РЅРѕРіРѕ РјРµС‚РѕРґСѓ");
+        MessageBox::Show("Задана матриця не підходить для даного методу");
         return;
     }
     else
@@ -123,14 +123,14 @@ System::Void ReverseMatrix::RevMatForm::CellDivisionButton_Click(System::Object^
         ReverseMatrixGridView->ColumnCount = ReverseMatrix.GetRow();
 
         ShowMatrix(ReverseMatrix.GetRow(), ReverseMatrix, 2);
-        //РЇС‡РµР№РєРё
+        //Ячейки
         ReverseMatrixGridView->AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode::AutoSizeToAllHeaders);
-        ReverseMatrixGridView->AutoResizeColumns();//РЎС‚РѕРІР±С†С–
+        ReverseMatrixGridView->AutoResizeColumns();//Стовбці
     }
     return System::Void();
 }
 
-//Р’РёРІРѕРґ РјР°С‚СЂРёС†С–
+//Вивод матриці
 void ReverseMatrix::RevMatForm::ShowMatrix(int SizeMatrix, Matrix MainMatrix, int type)
 {
     if (type == 1)
@@ -139,7 +139,7 @@ void ReverseMatrix::RevMatForm::ShowMatrix(int SizeMatrix, Matrix MainMatrix, in
         {
             for (int j = 0; j < SizeMatrix; j++)
             {
-                //Р—РЅР°С‡РµРЅРЅСЏ РјР°С‚СЂРёС†С–
+                //Значення матриці
                 MainMatrixGridView->Rows[i]->Cells[j]->Value = MainMatrix.GetArr()[i][j];
             }
         }
@@ -150,14 +150,14 @@ void ReverseMatrix::RevMatForm::ShowMatrix(int SizeMatrix, Matrix MainMatrix, in
         {
             for (int j = 0; j < SizeMatrix; j++)
             {
-                //Р—РЅР°С‡РµРЅРЅСЏ РјР°С‚СЂРёС†С–
+                //Значення матриці
                 ReverseMatrixGridView->Rows[i]->Cells[j]->Value = MainMatrix.GetArr()[i][j];
             }
         }
     }
 }
 
-//Р—С‡РёС‚СѓРІР°РЅРЅСЏ РјР°С‚СЂРёС†С– Р· DataGridView
+//Зчитування матриці з DataGridView
 Matrix ReverseMatrix::RevMatForm::GetMatrix(int type)
 {
     Matrix SomeMatrix(MainMatrixGridView->RowCount, MainMatrixGridView->ColumnCount);
@@ -186,7 +186,7 @@ Matrix ReverseMatrix::RevMatForm::GetMatrix(int type)
     return SomeMatrix;
 }
 
-//Р—Р°РїРёСЃ РѕР±РµСЂРЅРµРЅРѕС— РјР°С‚СЂРёС†С– Сѓ С„Р°Р№Р»
+//Запис оберненої матриці у файл
 System::Void ReverseMatrix::RevMatForm::WriteFileButton_Click(System::Object^ sender, System::EventArgs^ e)
 {
     Matrix ReverseMatrix = GetMatrix(2);
@@ -195,25 +195,25 @@ System::Void ReverseMatrix::RevMatForm::WriteFileButton_Click(System::Object^ se
     int result = WriteFile(ReverseMatrix, FileName);
     if (result == 1)
     {
-        MessageBox::Show("Р¤Р°Р№Р» РЅРµ Р·РЅР°Р№РґРµРЅРёР№");
+        MessageBox::Show("Файл не знайдений");
         return;
     }
     else
     {
-        MessageBox::Show("РњР°С‚СЂРёС†СЏ СѓСЃРїС–С€РЅРѕ Р·Р°РїРёСЃР°РЅР° Сѓ С„Р°Р№Р» ", FileNameTextBox->Text);
+        MessageBox::Show("Матриця успішно записана у файл ", FileNameTextBox->Text);
         return;
     }
     return System::Void();
 }
 
 
-//Р’РёС…С–Рґ
-System::Void ReverseMatrix::RevMatForm::РІРёС…С–РґToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
+//Вихід
+System::Void ReverseMatrix::RevMatForm::вихідToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
 {
     Application::Exit();
 }
 
-//РџРµСЂРµРІС–СЂРєР° РјР°С‚СЂРёС†С– РЅР° РЅРµРєРѕСЂРµРєС‚РЅС– СЃРёРјРІРѕР»Рё
+//Перевірка матриці на некоректні символи
 bool ReverseMatrix::RevMatForm::BannedSymbols()
 {
     string TrueSymbols = "0 1 2 3 4 5 6 7 8 9 ,";
