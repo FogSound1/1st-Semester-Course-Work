@@ -14,7 +14,7 @@ namespace ReverseMatrix
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Сводка для RevMatForm
+	/// РЎРІРѕРґРєР° РґР»СЏ RevMatForm
 	/// </summary>
 	public ref class RevMatForm : public System::Windows::Forms::Form
 	{
@@ -23,13 +23,13 @@ namespace ReverseMatrix
 		{
 			InitializeComponent();
 			//
-			//TODO: добавьте код конструктора
+			//TODO: РґРѕР±Р°РІСЊС‚Рµ РєРѕРґ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°
 			//
 		}
 
 	protected:
 		/// <summary>
-		/// Освободить все используемые ресурсы.
+		/// РћСЃРІРѕР±РѕРґРёС‚СЊ РІСЃРµ РёСЃРїРѕР»СЊР·СѓРµРјС‹Рµ СЂРµСЃСѓСЂСЃС‹.
 		/// </summary>
 		~RevMatForm()
 		{
@@ -64,7 +64,7 @@ namespace ReverseMatrix
 	private: System::Windows::Forms::TextBox^ FileNameTextBox;
 	private: System::Windows::Forms::Button^ WriteFileButton;
 	private: System::Windows::Forms::MenuStrip^ menuStrip1;
-	private: System::Windows::Forms::ToolStripMenuItem^ вихідToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ РІРёС…С–РґToolStripMenuItem;
 	private: System::Windows::Forms::CheckBox^ SolutionCheck;
 
 
@@ -96,14 +96,14 @@ namespace ReverseMatrix
 
 	private:
 		/// <summary>
-		/// Обязательная переменная конструктора.
+		/// РћР±СЏР·Р°С‚РµР»СЊРЅР°СЏ РїРµСЂРµРјРµРЅРЅР°СЏ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°.
 		/// </summary>
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// Требуемый метод для поддержки конструктора — не изменяйте 
-		/// содержимое этого метода с помощью редактора кода.
+		/// РўСЂРµР±СѓРµРјС‹Р№ РјРµС‚РѕРґ РґР»СЏ РїРѕРґРґРµСЂР¶РєРё РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° вЂ” РЅРµ РёР·РјРµРЅСЏР№С‚Рµ 
+		/// СЃРѕРґРµСЂР¶РёРјРѕРµ СЌС‚РѕРіРѕ РјРµС‚РѕРґР° СЃ РїРѕРјРѕС‰СЊСЋ СЂРµРґР°РєС‚РѕСЂР° РєРѕРґР°.
 		/// </summary>
 		void InitializeComponent(void)
 		{
@@ -124,7 +124,7 @@ namespace ReverseMatrix
 			this->FileNameTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->WriteFileButton = (gcnew System::Windows::Forms::Button());
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
-			this->вихідToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->РІРёС…С–РґToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->SolutionCheck = (gcnew System::Windows::Forms::CheckBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ReverseMatrixGridView))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->MainMatrixGridView))->BeginInit();
@@ -142,7 +142,7 @@ namespace ReverseMatrix
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(171, 23);
 			this->label2->TabIndex = 3;
-			this->label2->Text = L"Обернена матриця";
+			this->label2->Text = L"РћР±РµСЂРЅРµРЅР° РјР°С‚СЂРёС†СЏ";
 			// 
 			// ReverseMatrixGridView
 			// 
@@ -184,7 +184,7 @@ namespace ReverseMatrix
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(160, 23);
 			this->label1->TabIndex = 2;
-			this->label1->Text = L"Основна матриця";
+			this->label1->Text = L"РћСЃРЅРѕРІРЅР° РјР°С‚СЂРёС†СЏ";
 			// 
 			// MatrixSizeUpDown
 			// 
@@ -202,7 +202,7 @@ namespace ReverseMatrix
 			this->CreateMatrixButton->Name = L"CreateMatrixButton";
 			this->CreateMatrixButton->Size = System::Drawing::Size(101, 33);
 			this->CreateMatrixButton->TabIndex = 5;
-			this->CreateMatrixButton->Text = L"Створити";
+			this->CreateMatrixButton->Text = L"РЎС‚РІРѕСЂРёС‚Рё";
 			this->CreateMatrixButton->UseVisualStyleBackColor = true;
 			this->CreateMatrixButton->Click += gcnew System::EventHandler(this, &RevMatForm::CreateMatrixButton_Click);
 			// 
@@ -212,7 +212,7 @@ namespace ReverseMatrix
 			this->ArrGenAutoButton->Name = L"ArrGenAutoButton";
 			this->ArrGenAutoButton->Size = System::Drawing::Size(139, 33);
 			this->ArrGenAutoButton->TabIndex = 6;
-			this->ArrGenAutoButton->Text = L"Згенерувати";
+			this->ArrGenAutoButton->Text = L"Р—РіРµРЅРµСЂСѓРІР°С‚Рё";
 			this->ArrGenAutoButton->UseVisualStyleBackColor = true;
 			this->ArrGenAutoButton->Click += gcnew System::EventHandler(this, &RevMatForm::ArrGenAutoButton_Click);
 			// 
@@ -225,7 +225,7 @@ namespace ReverseMatrix
 			this->groupBox1->Size = System::Drawing::Size(371, 118);
 			this->groupBox1->TabIndex = 9;
 			this->groupBox1->TabStop = false;
-			this->groupBox1->Text = L"Методи обернення";
+			this->groupBox1->Text = L"РњРµС‚РѕРґРё РѕР±РµСЂРЅРµРЅРЅСЏ";
 			// 
 			// CellDivisionButton
 			// 
@@ -233,7 +233,7 @@ namespace ReverseMatrix
 			this->CellDivisionButton->Name = L"CellDivisionButton";
 			this->CellDivisionButton->Size = System::Drawing::Size(274, 38);
 			this->CellDivisionButton->TabIndex = 1;
-			this->CellDivisionButton->Text = L"Метод розбиття на клітини";
+			this->CellDivisionButton->Text = L"РњРµС‚РѕРґ СЂРѕР·Р±РёС‚С‚СЏ РЅР° РєР»С–С‚РёРЅРё";
 			this->CellDivisionButton->UseVisualStyleBackColor = true;
 			this->CellDivisionButton->Click += gcnew System::EventHandler(this, &RevMatForm::CellDivisionButton_Click);
 			// 
@@ -243,7 +243,7 @@ namespace ReverseMatrix
 			this->EmborderingButton->Name = L"EmborderingButton";
 			this->EmborderingButton->Size = System::Drawing::Size(274, 38);
 			this->EmborderingButton->TabIndex = 0;
-			this->EmborderingButton->Text = L"Метод окаймлення";
+			this->EmborderingButton->Text = L"РњРµС‚РѕРґ РѕРєР°Р№РјР»РµРЅРЅСЏ";
 			this->EmborderingButton->UseVisualStyleBackColor = true;
 			this->EmborderingButton->Click += gcnew System::EventHandler(this, &RevMatForm::EmborderingButton_Click);
 			// 
@@ -270,7 +270,7 @@ namespace ReverseMatrix
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(86, 23);
 			this->label3->TabIndex = 12;
-			this->label3->Text = L"Діапазон";
+			this->label3->Text = L"Р”С–Р°РїР°Р·РѕРЅ";
 			// 
 			// label4
 			// 
@@ -279,7 +279,7 @@ namespace ReverseMatrix
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(66, 23);
 			this->label4->TabIndex = 13;
-			this->label4->Text = L"Розмір";
+			this->label4->Text = L"Р РѕР·РјС–СЂ";
 			// 
 			// FileNameTextBox
 			// 
@@ -294,7 +294,7 @@ namespace ReverseMatrix
 			this->WriteFileButton->Name = L"WriteFileButton";
 			this->WriteFileButton->Size = System::Drawing::Size(168, 38);
 			this->WriteFileButton->TabIndex = 15;
-			this->WriteFileButton->Text = L"Записати у";
+			this->WriteFileButton->Text = L"Р—Р°РїРёСЃР°С‚Рё Сѓ";
 			this->WriteFileButton->UseVisualStyleBackColor = true;
 			this->WriteFileButton->Click += gcnew System::EventHandler(this, &RevMatForm::WriteFileButton_Click);
 			// 
@@ -302,19 +302,19 @@ namespace ReverseMatrix
 			// 
 			this->menuStrip1->GripMargin = System::Windows::Forms::Padding(2, 2, 0, 2);
 			this->menuStrip1->ImageScalingSize = System::Drawing::Size(24, 24);
-			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->вихідToolStripMenuItem });
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->РІРёС…С–РґToolStripMenuItem });
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
 			this->menuStrip1->Size = System::Drawing::Size(818, 33);
 			this->menuStrip1->TabIndex = 16;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
-			// вихідToolStripMenuItem
+			// РІРёС…С–РґToolStripMenuItem
 			// 
-			this->вихідToolStripMenuItem->Name = L"вихідToolStripMenuItem";
-			this->вихідToolStripMenuItem->Size = System::Drawing::Size(70, 29);
-			this->вихідToolStripMenuItem->Text = L"Вихід";
-			this->вихідToolStripMenuItem->Click += gcnew System::EventHandler(this, &RevMatForm::вихідToolStripMenuItem_Click);
+			this->РІРёС…С–РґToolStripMenuItem->Name = L"РІРёС…С–РґToolStripMenuItem";
+			this->РІРёС…С–РґToolStripMenuItem->Size = System::Drawing::Size(70, 29);
+			this->РІРёС…С–РґToolStripMenuItem->Text = L"Р’РёС…С–Рґ";
+			this->РІРёС…С–РґToolStripMenuItem->Click += gcnew System::EventHandler(this, &RevMatForm::РІРёС…С–РґToolStripMenuItem_Click);
 			// 
 			// SolutionCheck
 			// 
@@ -323,7 +323,7 @@ namespace ReverseMatrix
 			this->SolutionCheck->Name = L"SolutionCheck";
 			this->SolutionCheck->Size = System::Drawing::Size(193, 27);
 			this->SolutionCheck->TabIndex = 17;
-			this->SolutionCheck->Text = L"Детальне рішення";
+			this->SolutionCheck->Text = L"Р”РµС‚Р°Р»СЊРЅРµ СЂС–С€РµРЅРЅСЏ";
 			this->SolutionCheck->UseVisualStyleBackColor = true;
 			// 
 			// RevMatForm
@@ -375,6 +375,7 @@ private: System::Void CellDivisionButton_Click(System::Object^ sender, System::E
 private: void ShowMatrix(int SizeMatrix, Matrix MainMatrix, int type);
 private: Matrix GetMatrix(int type);
 private: System::Void WriteFileButton_Click(System::Object^ sender, System::EventArgs^ e);
-private: System::Void вихідToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
+private: System::Void РІРёС…С–РґToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
+private: bool BannedSymbols();
 };
 }
