@@ -74,28 +74,26 @@ System::Void ReverseMatrix::RevMatForm::EmborderingButton_Click(System::Object^ 
     }
 
     Matrix  MainMatrix = GetMatrix(1);
+    if (UnAcceptable(MainMatrix, 1))
+    {
+        MessageBox::Show("Задана матриця не підходить для даного методу");
+        return;
+    }
+
     if (SolutionCheck->Checked)
     {
         EmborderingSolution^ Form = gcnew EmborderingSolution(MainMatrix);
         Form->Show();
     }
 
-    if (UnAcceptable(MainMatrix, 1))
-    {
-        MessageBox::Show("Задана матриця не підходить для даного методу");
-        return;
-    }
-    else
-    {
-        Matrix ReverseMatrix = Embordering(MainMatrix);
-        ReverseMatrixGridView->RowCount = ReverseMatrix.GetRow();
-        ReverseMatrixGridView->ColumnCount = ReverseMatrix.GetRow();
+    Matrix ReverseMatrix = Embordering(MainMatrix);
+    ReverseMatrixGridView->RowCount = ReverseMatrix.GetRow();
+    ReverseMatrixGridView->ColumnCount = ReverseMatrix.GetRow();
 
-        ShowMatrix(ReverseMatrix.GetRow(), ReverseMatrix, 2);
-        //Ячейки
-        MainMatrixGridView->AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode::AutoSizeToAllHeaders);
-        MainMatrixGridView->AutoResizeColumns();//Стовбці
-    }
+    ShowMatrix(ReverseMatrix.GetRow(), ReverseMatrix, 2);
+    //Ячейки
+    MainMatrixGridView->AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode::AutoSizeToAllHeaders);
+    MainMatrixGridView->AutoResizeColumns();//Стовбці
 
     return System::Void();
 }
@@ -110,28 +108,28 @@ System::Void ReverseMatrix::RevMatForm::CellDivisionButton_Click(System::Object^
     }
 
     Matrix  MainMatrix = GetMatrix(1);
-    if (SolutionCheck->Checked)
-    {
-        CellDivisionSolution^ Form = gcnew CellDivisionSolution(MainMatrix);
-        Form->Show();
-    }
 
     if (UnAcceptable(MainMatrix, 2))
     {
         MessageBox::Show("Задана матриця не підходить для даного методу");
         return;
     }
-    else
-    {
-        Matrix ReverseMatrix = CellDivision(MainMatrix);
-        ReverseMatrixGridView->RowCount = ReverseMatrix.GetRow();
-        ReverseMatrixGridView->ColumnCount = ReverseMatrix.GetRow();
 
-        ShowMatrix(ReverseMatrix.GetRow(), ReverseMatrix, 2);
-        //Ячейки
-        ReverseMatrixGridView->AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode::AutoSizeToAllHeaders);
-        ReverseMatrixGridView->AutoResizeColumns();//Стовбці
+    if (SolutionCheck->Checked)
+    {
+        CellDivisionSolution^ Form = gcnew CellDivisionSolution(MainMatrix);
+        Form->Show();
     }
+
+    Matrix ReverseMatrix = CellDivision(MainMatrix);
+    ReverseMatrixGridView->RowCount = ReverseMatrix.GetRow();
+    ReverseMatrixGridView->ColumnCount = ReverseMatrix.GetRow();
+
+    ShowMatrix(ReverseMatrix.GetRow(), ReverseMatrix, 2);
+    //Ячейки
+    ReverseMatrixGridView->AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode::AutoSizeToAllHeaders);
+    ReverseMatrixGridView->AutoResizeColumns();//Стовбці
+
     return System::Void();
 }
 
