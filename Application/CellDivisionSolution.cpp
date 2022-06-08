@@ -1,7 +1,7 @@
 #include "CellDivisionSolution.h"
 #include "RevMat.h"
 
-System::Void ReverseMatrix::CellDivisionSolution::‚Ëı≥‰ToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
+System::Void ReverseMatrix::CellDivisionSolution::–≤–∏—Ö—ñ–¥ToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	Application::Exit();
 	return System::Void();
@@ -28,18 +28,18 @@ void ReverseMatrix::CellDivisionSolution::CDResult(Matrix MainMatrix)
 	{
 		for (int j = 0; j < MatrixCell11.GetColumn(); j++)
 		{
-			//Õ‡Á‚‡ Ú‡·ÎËˆ≥ Û Î≥‚ÓÏÛ ÍÛÚÍÛ
+			//–ù–∞–∑–≤–∞ —Ç–∞–±–ª–∏—Ü—ñ —É –ª—ñ–≤–æ–º—É –∫—É—Ç–∫—É
 			MatrixCell11View->TopLeftHeaderCell->Value = "A11";
-			//ÕÓÏÂË ÒÚÓÎ·ˆ≥‚
+			//–ù–æ–º–µ—Ä–∏ —Å—Ç–æ–ª–±—Ü—ñ–≤
 			MatrixCell11View->Columns[j]->HeaderCell->Value = Convert::ToString(j + 1);
-			//ÕÓÏÂË ˇ‰Í≥‚
+			//–ù–æ–º–µ—Ä–∏ —Ä—è–¥–∫—ñ–≤
 			MatrixCell11View->Rows[i]->HeaderCell->Value = Convert::ToString(i + 1);
-			//«Ì‡˜ÂÌÌˇ Ï‡ÚËˆ≥
+			//–ó–Ω–∞—á–µ–Ω–Ω—è –º–∞—Ç—Ä–∏—Ü—ñ
 			MatrixCell11View->Rows[i]->Cells[j]->Value = MatrixCell11.GetArr()[i][j];
 		}
 	}
 	MatrixCell11View->AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode::AutoSizeToAllHeaders);
-	MatrixCell11View->AutoResizeColumns();//—ÚÓ‚·ˆ≥
+	MatrixCell11View->AutoResizeColumns();//–°—Ç–æ–≤–±—Ü—ñ
 
 
 	MatrixCell12View->RowCount = MatrixCell12.GetRow();
@@ -48,18 +48,18 @@ void ReverseMatrix::CellDivisionSolution::CDResult(Matrix MainMatrix)
 	{
 		for (int j = 0; j < MatrixCell12.GetColumn(); j++)
 		{
-			//Õ‡Á‚‡ Ú‡·ÎËˆ≥ Û Î≥‚ÓÏÛ ÍÛÚÍÛ
+			//–ù–∞–∑–≤–∞ —Ç–∞–±–ª–∏—Ü—ñ —É –ª—ñ–≤–æ–º—É –∫—É—Ç–∫—É
 			MatrixCell12View->TopLeftHeaderCell->Value = "A12";
-			//ÕÓÏÂË ÒÚÓÎ·ˆ≥‚
+			//–ù–æ–º–µ—Ä–∏ —Å—Ç–æ–ª–±—Ü—ñ–≤
 			MatrixCell12View->Columns[j]->HeaderCell->Value = Convert::ToString(j + 1);
-			//ÕÓÏÂË ˇ‰Í≥‚
+			//–ù–æ–º–µ—Ä–∏ —Ä—è–¥–∫—ñ–≤
 			MatrixCell12View->Rows[i]->HeaderCell->Value = Convert::ToString(i + 1);
-			//«Ì‡˜ÂÌÌˇ Ï‡ÚËˆ≥
+			//–ó–Ω–∞—á–µ–Ω–Ω—è –º–∞—Ç—Ä–∏—Ü—ñ
 			MatrixCell12View->Rows[i]->Cells[j]->Value = MatrixCell12.GetArr()[i][j];
 		}
 	}
 	MatrixCell12View->AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode::AutoSizeToAllHeaders);
-	MatrixCell12View->AutoResizeColumns();//—ÚÓ‚·ˆ≥
+	MatrixCell12View->AutoResizeColumns();//–°—Ç–æ–≤–±—Ü—ñ
 
 	MatrixCell21View->RowCount = MatrixCell21.GetRow();
 	MatrixCell21View->ColumnCount = MatrixCell21.GetColumn();
@@ -67,18 +67,18 @@ void ReverseMatrix::CellDivisionSolution::CDResult(Matrix MainMatrix)
 	{
 		for (int j = 0; j < MatrixCell21.GetColumn(); j++)
 		{
-			//Õ‡Á‚‡ Ú‡·ÎËˆ≥ Û Î≥‚ÓÏÛ ÍÛÚÍÛ
+			//–ù–∞–∑–≤–∞ —Ç–∞–±–ª–∏—Ü—ñ —É –ª—ñ–≤–æ–º—É –∫—É—Ç–∫—É
 			MatrixCell21View->TopLeftHeaderCell->Value = "A21";
-			//ÕÓÏÂË ÒÚÓÎ·ˆ≥‚
+			//–ù–æ–º–µ—Ä–∏ —Å—Ç–æ–ª–±—Ü—ñ–≤
 			MatrixCell21View->Columns[j]->HeaderCell->Value = Convert::ToString(j + 1);
-			//ÕÓÏÂË ˇ‰Í≥‚
+			//–ù–æ–º–µ—Ä–∏ —Ä—è–¥–∫—ñ–≤
 			MatrixCell21View->Rows[i]->HeaderCell->Value = Convert::ToString(i + 1);
-			//«Ì‡˜ÂÌÌˇ Ï‡ÚËˆ≥
+			//–ó–Ω–∞—á–µ–Ω–Ω—è –º–∞—Ç—Ä–∏—Ü—ñ
 			MatrixCell21View->Rows[i]->Cells[j]->Value = MatrixCell21.GetArr()[i][j];
 		}
 	}
 	MatrixCell21View->AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode::AutoSizeToAllHeaders);
-	MatrixCell21View->AutoResizeColumns();//—ÚÓ‚·ˆ≥
+	MatrixCell21View->AutoResizeColumns();//–°—Ç–æ–≤–±—Ü—ñ
 
 	MatrixCell22View->RowCount = MatrixCell22.GetRow();
 	MatrixCell22View->ColumnCount = MatrixCell22.GetColumn();
@@ -86,18 +86,18 @@ void ReverseMatrix::CellDivisionSolution::CDResult(Matrix MainMatrix)
 	{
 		for (int j = 0; j < MatrixCell22.GetColumn(); j++)
 		{
-			//Õ‡Á‚‡ Ú‡·ÎËˆ≥ Û Î≥‚ÓÏÛ ÍÛÚÍÛ
+			//–ù–∞–∑–≤–∞ —Ç–∞–±–ª–∏—Ü—ñ —É –ª—ñ–≤–æ–º—É –∫—É—Ç–∫—É
 			MatrixCell22View->TopLeftHeaderCell->Value = "A22";
-			//ÕÓÏÂË ÒÚÓÎ·ˆ≥‚
+			//–ù–æ–º–µ—Ä–∏ —Å—Ç–æ–ª–±—Ü—ñ–≤
 			MatrixCell22View->Columns[j]->HeaderCell->Value = Convert::ToString(j + 1);
-			//ÕÓÏÂË ˇ‰Í≥‚
+			//–ù–æ–º–µ—Ä–∏ —Ä—è–¥–∫—ñ–≤
 			MatrixCell22View->Rows[i]->HeaderCell->Value = Convert::ToString(i + 1);
-			//«Ì‡˜ÂÌÌˇ Ï‡ÚËˆ≥
+			//–ó–Ω–∞—á–µ–Ω–Ω—è –º–∞—Ç—Ä–∏—Ü—ñ
 			MatrixCell22View->Rows[i]->Cells[j]->Value = MatrixCell22.GetArr()[i][j];
 		}
 	}
 	MatrixCell22View->AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode::AutoSizeToAllHeaders);
-	MatrixCell22View->AutoResizeColumns();//—ÚÓ‚·ˆ≥
+	MatrixCell22View->AutoResizeColumns();//–°—Ç–æ–≤–±—Ü—ñ
 
 	R11View->RowCount = MatrixR11.GetRow();
 	R11View->ColumnCount = MatrixR11.GetColumn();
@@ -105,18 +105,18 @@ void ReverseMatrix::CellDivisionSolution::CDResult(Matrix MainMatrix)
 	{
 		for (int j = 0; j < MatrixR11.GetColumn(); j++)
 		{
-			//Õ‡Á‚‡ Ú‡·ÎËˆ≥ Û Î≥‚ÓÏÛ ÍÛÚÍÛ
+			//–ù–∞–∑–≤–∞ —Ç–∞–±–ª–∏—Ü—ñ —É –ª—ñ–≤–æ–º—É –∫—É—Ç–∫—É
 			R11View->TopLeftHeaderCell->Value = "R11";
-			//ÕÓÏÂË ÒÚÓÎ·ˆ≥‚
+			//–ù–æ–º–µ—Ä–∏ —Å—Ç–æ–ª–±—Ü—ñ–≤
 			R11View->Columns[j]->HeaderCell->Value = Convert::ToString(j + 1);
-			//ÕÓÏÂË ˇ‰Í≥‚
+			//–ù–æ–º–µ—Ä–∏ —Ä—è–¥–∫—ñ–≤
 			R11View->Rows[i]->HeaderCell->Value = Convert::ToString(i + 1);
-			//«Ì‡˜ÂÌÌˇ Ï‡ÚËˆ≥
+			//–ó–Ω–∞—á–µ–Ω–Ω—è –º–∞—Ç—Ä–∏—Ü—ñ
 			R11View->Rows[i]->Cells[j]->Value = MatrixR11.GetArr()[i][j];
 		}
 	}
 	R11View->AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode::AutoSizeToAllHeaders);
-	R11View->AutoResizeColumns();//—ÚÓ‚·ˆ≥
+	R11View->AutoResizeColumns();//–°—Ç–æ–≤–±—Ü—ñ
 
 	R12View->RowCount = MatrixR12.GetRow();
 	R12View->ColumnCount = MatrixR12.GetColumn();
@@ -124,18 +124,18 @@ void ReverseMatrix::CellDivisionSolution::CDResult(Matrix MainMatrix)
 	{
 		for (int j = 0; j < MatrixR12.GetColumn(); j++)
 		{
-			//Õ‡Á‚‡ Ú‡·ÎËˆ≥ Û Î≥‚ÓÏÛ ÍÛÚÍÛ
+			//–ù–∞–∑–≤–∞ —Ç–∞–±–ª–∏—Ü—ñ —É –ª—ñ–≤–æ–º—É –∫—É—Ç–∫—É
 			R12View->TopLeftHeaderCell->Value = "R12";
-			//ÕÓÏÂË ÒÚÓÎ·ˆ≥‚
+			//–ù–æ–º–µ—Ä–∏ —Å—Ç–æ–ª–±—Ü—ñ–≤
 			R12View->Columns[j]->HeaderCell->Value = Convert::ToString(j + 1);
-			//ÕÓÏÂË ˇ‰Í≥‚
+			//–ù–æ–º–µ—Ä–∏ —Ä—è–¥–∫—ñ–≤
 			R12View->Rows[i]->HeaderCell->Value = Convert::ToString(i + 1);
-			//«Ì‡˜ÂÌÌˇ Ï‡ÚËˆ≥
+			//–ó–Ω–∞—á–µ–Ω–Ω—è –º–∞—Ç—Ä–∏—Ü—ñ
 			R12View->Rows[i]->Cells[j]->Value = MatrixR12.GetArr()[i][j];
 		}
 	}
 	R12View->AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode::AutoSizeToAllHeaders);
-	R12View->AutoResizeColumns();//—ÚÓ‚·ˆ≥
+	R12View->AutoResizeColumns();//–°—Ç–æ–≤–±—Ü—ñ
 
 	R21View->RowCount = MatrixR21.GetRow();
 	R21View->ColumnCount = MatrixR21.GetColumn();
@@ -143,18 +143,18 @@ void ReverseMatrix::CellDivisionSolution::CDResult(Matrix MainMatrix)
 	{
 		for (int j = 0; j < MatrixR21.GetColumn(); j++)
 		{
-			//Õ‡Á‚‡ Ú‡·ÎËˆ≥ Û Î≥‚ÓÏÛ ÍÛÚÍÛ
+			//–ù–∞–∑–≤–∞ —Ç–∞–±–ª–∏—Ü—ñ —É –ª—ñ–≤–æ–º—É –∫—É—Ç–∫—É
 			R21View->TopLeftHeaderCell->Value = "R21";
-			//ÕÓÏÂË ÒÚÓÎ·ˆ≥‚
+			//–ù–æ–º–µ—Ä–∏ —Å—Ç–æ–ª–±—Ü—ñ–≤
 			R21View->Columns[j]->HeaderCell->Value = Convert::ToString(j + 1);
-			//ÕÓÏÂË ˇ‰Í≥‚
+			//–ù–æ–º–µ—Ä–∏ —Ä—è–¥–∫—ñ–≤
 			R21View->Rows[i]->HeaderCell->Value = Convert::ToString(i + 1);
-			//«Ì‡˜ÂÌÌˇ Ï‡ÚËˆ≥
+			//–ó–Ω–∞—á–µ–Ω–Ω—è –º–∞—Ç—Ä–∏—Ü—ñ
 			R21View->Rows[i]->Cells[j]->Value = MatrixR21.GetArr()[i][j];
 		}
 	}
 	R21View->AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode::AutoSizeToAllHeaders);
-	R21View->AutoResizeColumns();//—ÚÓ‚·ˆ≥
+	R21View->AutoResizeColumns();//–°—Ç–æ–≤–±—Ü—ñ
 
 	R22View->RowCount = MatrixR22.GetRow();
 	R22View->ColumnCount = MatrixR22.GetColumn();
@@ -162,18 +162,18 @@ void ReverseMatrix::CellDivisionSolution::CDResult(Matrix MainMatrix)
 	{
 		for (int j = 0; j < MatrixR22.GetColumn(); j++)
 		{
-			//Õ‡Á‚‡ Ú‡·ÎËˆ≥ Û Î≥‚ÓÏÛ ÍÛÚÍÛ
+			//–ù–∞–∑–≤–∞ —Ç–∞–±–ª–∏—Ü—ñ —É –ª—ñ–≤–æ–º—É –∫—É—Ç–∫—É
 			R22View->TopLeftHeaderCell->Value = "R22";
-			//ÕÓÏÂË ÒÚÓÎ·ˆ≥‚
+			//–ù–æ–º–µ—Ä–∏ —Å—Ç–æ–ª–±—Ü—ñ–≤
 			R22View->Columns[j]->HeaderCell->Value = Convert::ToString(j + 1);
-			//ÕÓÏÂË ˇ‰Í≥‚
+			//–ù–æ–º–µ—Ä–∏ —Ä—è–¥–∫—ñ–≤
 			R22View->Rows[i]->HeaderCell->Value = Convert::ToString(i + 1);
-			//«Ì‡˜ÂÌÌˇ Ï‡ÚËˆ≥
+			//–ó–Ω–∞—á–µ–Ω–Ω—è –º–∞—Ç—Ä–∏—Ü—ñ
 			R22View->Rows[i]->Cells[j]->Value = MatrixR22.GetArr()[i][j];
 		}
 	}
 	R22View->AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode::AutoSizeToAllHeaders);
-	R22View->AutoResizeColumns();//—ÚÓ‚·ˆ≥
+	R22View->AutoResizeColumns();//–°—Ç–æ–≤–±—Ü—ñ
 
 	ReverseMatrixCD->RowCount = ReverseMatrix.GetRow();
 	ReverseMatrixCD->ColumnCount = ReverseMatrix.GetColumn();
@@ -181,16 +181,16 @@ void ReverseMatrix::CellDivisionSolution::CDResult(Matrix MainMatrix)
 	{
 		for (int j = 0; j < ReverseMatrix.GetColumn(); j++)
 		{
-			//Õ‡Á‚‡ Ú‡·ÎËˆ≥ Û Î≥‚ÓÏÛ ÍÛÚÍÛ
-			ReverseMatrixCD->TopLeftHeaderCell->Value = "Œ·ÂÌÂÌ‡ Ï‡ÚËˆˇ";
-			//ÕÓÏÂË ÒÚÓÎ·ˆ≥‚
+			//–ù–∞–∑–≤–∞ —Ç–∞–±–ª–∏—Ü—ñ —É –ª—ñ–≤–æ–º—É –∫—É—Ç–∫—É
+			ReverseMatrixCD->TopLeftHeaderCell->Value = "–û–±–µ—Ä–Ω–µ–Ω–∞ –º–∞—Ç—Ä–∏—Ü—è";
+			//–ù–æ–º–µ—Ä–∏ —Å—Ç–æ–ª–±—Ü—ñ–≤
 			ReverseMatrixCD->Columns[j]->HeaderCell->Value = Convert::ToString(j + 1);
-			//ÕÓÏÂË ˇ‰Í≥‚
+			//–ù–æ–º–µ—Ä–∏ —Ä—è–¥–∫—ñ–≤
 			ReverseMatrixCD->Rows[i]->HeaderCell->Value = Convert::ToString(i + 1);
-			//«Ì‡˜ÂÌÌˇ Ï‡ÚËˆ≥
+			//–ó–Ω–∞—á–µ–Ω–Ω—è –º–∞—Ç—Ä–∏—Ü—ñ
 			ReverseMatrixCD->Rows[i]->Cells[j]->Value = ReverseMatrix.GetArr()[i][j];
 		}
 	}
 	ReverseMatrixCD->AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode::AutoSizeToAllHeaders);
-	ReverseMatrixCD->AutoResizeColumns();//—ÚÓ‚·ˆ≥
+	ReverseMatrixCD->AutoResizeColumns();//–°—Ç–æ–≤–±—Ü—ñ
 }
