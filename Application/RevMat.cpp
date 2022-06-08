@@ -9,6 +9,7 @@ using namespace std;
 
 bool UnAcceptable(Matrix MainMatrix, int type) //Перевірка матриці на визначники різних її частин
 {
+	int count = 0;
 	if (MainMatrix.GetRow() == 1 && MainMatrix.GetColumn() == 1 && MainMatrix.GetArr()[0][0] != 0)
 	{
 		return false;
@@ -63,13 +64,18 @@ bool UnAcceptable(Matrix MainMatrix, int type) //Перевірка матриц
 			return true;;
 		}
 
-		Matrix MatrixR11 = MatrixCell11 - (MatrixCell12 * (CellDivision(MatrixCell22) * MatrixCell21));
+		Matrix MatrixR11 = MatrixCell11 - (MatrixCell12 * (CellDivision(MatrixCell22, &count) * MatrixCell21));
 		if (MatrixR11.GetArr()[MatrixR11.GetRow() - 1][MatrixR11.GetColumn() - 1] == 0)
 		{
 			return true;
 		}
 
 		if (UnAcceptable(MatrixCell22, 2))
+		{
+			return true;
+		}
+		CellDivision(MainMatrix, &count);
+		if (count < 0)
 		{
 			return true;
 		}
@@ -325,10 +331,14 @@ Matrix CellDivisionBuild(Matrix MainMatrix, Matrix MatrixR11, Matrix MatrixR12, 
 
 
 //Знаходження матриці методом розбиття на клітки
-Matrix CellDivision(Matrix MainMatrix)
+Matrix CellDivision(Matrix MainMatrix, int* count)
 {
 	if (MainMatrix.GetRow() == 1)
 	{
+		if (MainMatrix.GetArr()[0][0] == 0)
+		{
+			(*count) = -200;
+		}
 		MainMatrix.GetArr()[0][0] = 1 / MainMatrix.GetArr()[0][0];
 		return MainMatrix;
 	}
@@ -337,9 +347,11 @@ Matrix CellDivision(Matrix MainMatrix)
 	Matrix MatrixCell12 = CellDivisionInitialization(MainMatrix, 2);
 	Matrix MatrixCell21 = CellDivisionInitialization(MainMatrix, 3);
 	Matrix MatrixCell22 = CellDivisionInitialization(MainMatrix, 4);
-	Matrix MatrixCell22Inverse = CellDivision(MatrixCell22);
+	(*count)++;
+	Matrix MatrixCell22Inverse = CellDivision(MatrixCell22, count);
 
-	Matrix MatrixR11 = CellDivision(MatrixCell11 - (MatrixCell12 * (MatrixCell22Inverse * MatrixCell21)));
+	(*count)++;
+	Matrix MatrixR11 = CellDivision(MatrixCell11 - (MatrixCell12 * (MatrixCell22Inverse * MatrixCell21)), count);
 	Matrix MatrixR12 = ((MatrixR11 * (-1)) * MatrixCell12) * MatrixCell22Inverse;
 	Matrix MatrixR21 = (MatrixCell22Inverse * (-1)) * MatrixCell21 * MatrixR11;
 	Matrix MatrixR22 = MatrixCell22Inverse - (MatrixCell22Inverse * MatrixCell21 * MatrixR12);
