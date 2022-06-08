@@ -101,6 +101,7 @@ System::Void ReverseMatrix::RevMatForm::EmborderingButton_Click(System::Object^ 
 //Знаходженн матриці методом робиття на клітки
 System::Void ReverseMatrix::RevMatForm::CellDivisionButton_Click(System::Object^ sender, System::EventArgs^ e)
 {
+    int count = 0;
     if (BannedSymbols())
     {
         MessageBox::Show("Задана матриця містить некоректний символ");
@@ -121,7 +122,7 @@ System::Void ReverseMatrix::RevMatForm::CellDivisionButton_Click(System::Object^
         Form->Show();
     }
 
-    Matrix ReverseMatrix = CellDivision(MainMatrix);
+    Matrix ReverseMatrix = CellDivision(MainMatrix, &count);
     ReverseMatrixGridView->RowCount = ReverseMatrix.GetRow();
     ReverseMatrixGridView->ColumnCount = ReverseMatrix.GetRow();
 
