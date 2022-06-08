@@ -9,19 +9,23 @@ System::Void ReverseMatrix::CellDivisionSolution::вихідToolStripMenuItem_Cl
 
 void ReverseMatrix::CellDivisionSolution::CDResult(Matrix MainMatrix)
 {
+	int count = 0;
 	Matrix MatrixCell11 = CellDivisionInitialization(MainMatrix, 1);
 	Matrix MatrixCell12 = CellDivisionInitialization(MainMatrix, 2);
 	Matrix MatrixCell21 = CellDivisionInitialization(MainMatrix, 3);
 	Matrix MatrixCell22 = CellDivisionInitialization(MainMatrix, 4);
-	Matrix MatrixCell22Inverse = CellDivision(MatrixCell22);
+	count++;
+	Matrix MatrixCell22Inverse = CellDivision(MatrixCell22, &count);
 
-	Matrix MatrixR11 = MachineZero(CellDivision(MatrixCell11 - (MatrixCell12 * (MatrixCell22Inverse * MatrixCell21))));
+	count++;
+	Matrix MatrixR11 = MachineZero(CellDivision(MatrixCell11 - (MatrixCell12 * (MatrixCell22Inverse * MatrixCell21)), &count));
 	Matrix MatrixR12 = MachineZero(((MatrixR11 * (-1)) * MatrixCell12) * MatrixCell22Inverse);
 	Matrix MatrixR21 = MachineZero((MatrixCell22Inverse * (-1)) * MatrixCell21 * MatrixR11);
 	Matrix MatrixR22 = MachineZero(MatrixCell22Inverse - (MatrixCell22Inverse * MatrixCell21 * MatrixR12));
 
 	Matrix ReverseMatrix = CellDivisionBuild(MainMatrix, MatrixR11, MatrixR12, MatrixR21, MatrixR22);
 	
+	RecCount->Text = Convert::ToString(count);
 	MatrixCell11View->RowCount = MatrixCell11.GetRow();
 	MatrixCell11View->ColumnCount = MatrixCell11.GetColumn();
 	for (int i = 0; i < MatrixCell11.GetRow(); i++)
