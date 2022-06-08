@@ -1,5 +1,4 @@
 #include <iostream>
-#include <iomanip>
 #include "Matrix.h"
 #include "RevMat.h"
 #include <ctime>
@@ -8,7 +7,7 @@
 #include <fstream>
 using namespace std;
 
-bool UnAcceptable(Matrix MainMatrix, int type) //Перевірка матриці на визначники різних її частин
+bool UnAcceptable(Matrix MainMatrix, int type) //РџРµСЂРµРІС–СЂРєР° РјР°С‚СЂРёС†С– РЅР° РІРёР·РЅР°С‡РЅРёРєРё СЂС–Р·РЅРёС… С—С— С‡Р°СЃС‚РёРЅ
 {
 	if (MainMatrix.GetRow() == 1 && MainMatrix.GetColumn() == 1 && MainMatrix.GetArr()[0][0] != 0)
 	{
@@ -77,7 +76,7 @@ bool UnAcceptable(Matrix MainMatrix, int type) //Перевірка матриці на визначники
 	}
 }
 
-Matrix MachineZero(Matrix CurrentMatrix) //Заміна усіх машинних нулей на звичайні
+Matrix MachineZero(Matrix CurrentMatrix) //Р—Р°РјС–РЅР° СѓСЃС–С… РјР°С€РёРЅРЅРёС… РЅСѓР»РµР№ РЅР° Р·РІРёС‡Р°Р№РЅС–
 {
 	for (int i = 0; i < CurrentMatrix.GetRow(); i++)
 	{
@@ -92,7 +91,7 @@ Matrix MachineZero(Matrix CurrentMatrix) //Заміна усіх машинних нулей на звичайн
 	return CurrentMatrix;
 }
 
-bool DoubleZero(double number) //Перевірка на машинні нулі у матриці
+bool DoubleZero(double number) //РџРµСЂРµРІС–СЂРєР° РЅР° РјР°С€РёРЅРЅС– РЅСѓР»С– Сѓ РјР°С‚СЂРёС†С–
 {
 	string ZeroCheck = to_string(number);
 	string ZeroMinus = "-0.000000";
@@ -111,7 +110,7 @@ bool DoubleZero(double number) //Перевірка на машинні нулі у матриці
 	}
 }
 
-Matrix Embordering(Matrix MainMatrix) //Метод окаймлення
+Matrix Embordering(Matrix MainMatrix) //РњРµС‚РѕРґ РѕРєР°Р№РјР»РµРЅРЅСЏ
 {
 	int Disposal = MainMatrix.GetRow();
 
@@ -168,7 +167,7 @@ Matrix Embordering(Matrix MainMatrix) //Метод окаймлення
 	}
 }
 
-Matrix CellDivisionInitialization(Matrix MainMatrix, int number) //Розбиття матриці на клітки
+Matrix CellDivisionInitialization(Matrix MainMatrix, int number) //Р РѕР·Р±РёС‚С‚СЏ РјР°С‚СЂРёС†С– РЅР° РєР»С–С‚РєРё
 {
 	int Disposal = MainMatrix.GetRow();
 
@@ -266,7 +265,7 @@ Matrix CellDivisionInitialization(Matrix MainMatrix, int number) //Розбиття матр
 	}
 }
 
-//Зібрання кліток в одну
+//Р—С–Р±СЂР°РЅРЅСЏ РєР»С–С‚РѕРє РІ РѕРґРЅСѓ
 Matrix CellDivisionBuild(Matrix MainMatrix, Matrix MatrixR11, Matrix MatrixR12, Matrix MatrixR21, Matrix MatrixR22)
 {
 	Matrix ReverseMatrix(MainMatrix.GetRow(), MainMatrix.GetColumn());
@@ -325,7 +324,7 @@ Matrix CellDivisionBuild(Matrix MainMatrix, Matrix MatrixR11, Matrix MatrixR12, 
 }
 
 
-//Знаходження матриці методом розбиття на клітки
+//Р—РЅР°С…РѕРґР¶РµРЅРЅСЏ РјР°С‚СЂРёС†С– РјРµС‚РѕРґРѕРј СЂРѕР·Р±РёС‚С‚СЏ РЅР° РєР»С–С‚РєРё
 Matrix CellDivision(Matrix MainMatrix)
 {
 	if (MainMatrix.GetRow() == 1)
@@ -349,15 +348,15 @@ Matrix CellDivision(Matrix MainMatrix)
 	return MachineZero(ReverseMatrix);
 }
 
-int WriteFile(Matrix ReverseMatrix, string FileName) //Функція запису у файл
+int WriteFile(Matrix ReverseMatrix, string FileName) //Р¤СѓРЅРєС†С–СЏ Р·Р°РїРёСЃСѓ Сѓ С„Р°Р№Р»
 {
-	ofstream f1; //Переменная f1 отвечает за запись в файл
-	f1.open(FileName); //Открываем файл для записи
-	if (!f1.is_open()) //Проверка открытия файла
+	ofstream f1; //РџРµСЂРµРјРµРЅРЅР°СЏ f1 РѕС‚РІРµС‡Р°РµС‚ Р·Р° Р·Р°РїРёСЃСЊ РІ С„Р°Р№Р»
+	f1.open(FileName); //РћС‚РєСЂС‹РІР°РµРј С„Р°Р№Р» РґР»СЏ Р·Р°РїРёСЃРё
+	if (!f1.is_open()) //РџСЂРѕРІРµСЂРєР° РѕС‚РєСЂС‹С‚РёСЏ С„Р°Р№Р»Р°
 	{
 		return 1;
 	}
-	else //Заполнения нового файла
+	else //Р—Р°РїРѕР»РЅРµРЅРёСЏ РЅРѕРІРѕРіРѕ С„Р°Р№Р»Р°
 	{
 		f1 << ReverseMatrix.GetRow() << "\t";
 		f1 << ReverseMatrix.GetColumn();
