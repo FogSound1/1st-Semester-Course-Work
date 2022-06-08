@@ -15,12 +15,12 @@ void ReverseMatrix::EmborderingSolution::Esolution(Matrix MainMatrix, int iter)
 		{
 			for (int j = 0; j < MainMatrix.GetColumn(); j++)
 			{
-				//«Ì‡˜ÂÌÌˇ Ï‡ÚËˆ≥
+				//–ó–Ω–∞—á–µ–Ω–Ω—è –º–∞—Ç—Ä–∏—Ü—ñ
 				MainMatrixE->Rows[i]->Cells[j]->Value = MainMatrix.GetArr()[i][j];
 			}
 		}
 		MainMatrixE->AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode::AutoSizeToAllHeaders);
-		MainMatrixE->AutoResizeColumns();//—ÚÓ‚·ˆ≥
+		MainMatrixE->AutoResizeColumns();//–°—Ç–æ–≤–±—Ü—ñ
 
 		IterText->Text = Convert::ToString(1);
 
@@ -33,12 +33,12 @@ void ReverseMatrix::EmborderingSolution::Esolution(Matrix MainMatrix, int iter)
 		{
 			for (int j = 0; j < OldA.GetColumn(); j++)
 			{
-				//«Ì‡˜ÂÌÌˇ Ï‡ÚËˆ≥
+				//–ó–Ω–∞—á–µ–Ω–Ω—è –º–∞—Ç—Ä–∏—Ü—ñ
 				MatrixAView->Rows[i]->Cells[j]->Value = OldA.GetArr()[i][j];
 			}
 		}
 		MatrixAView->AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode::AutoSizeToAllHeaders);
-		MatrixAView->AutoResizeColumns();//—ÚÓ‚·ˆ≥
+		MatrixAView->AutoResizeColumns();//–°—Ç–æ–≤–±—Ü—ñ
 	}
 
 	for (int k = 1; k < Disposal; k++)
@@ -59,12 +59,12 @@ void ReverseMatrix::EmborderingSolution::Esolution(Matrix MainMatrix, int iter)
 			{
 				for (int j = 0; j < A.GetColumn(); j++)
 				{
-					//«Ì‡˜ÂÌÌˇ Ï‡ÚËˆ≥
+					//–ó–Ω–∞—á–µ–Ω–Ω—è –º–∞—Ç—Ä–∏—Ü—ñ
 					MatrixAView->Rows[i]->Cells[j]->Value = A.GetArr()[i][j];
 				}
 			}
 			MatrixAView->AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode::AutoSizeToAllHeaders);
-			MatrixAView->AutoResizeColumns();//—ÚÓ‚·ˆ≥
+			MatrixAView->AutoResizeColumns();//–°—Ç–æ–≤–±—Ü—ñ
 		}
 
 		Matrix U(k, 1);
@@ -104,12 +104,12 @@ void ReverseMatrix::EmborderingSolution::Esolution(Matrix MainMatrix, int iter)
 			{
 				for (int j = 0; j < U.GetColumn(); j++)
 				{
-					//«Ì‡˜ÂÌÌˇ Ï‡ÚËˆ≥
+					//–ó–Ω–∞—á–µ–Ω–Ω—è –º–∞—Ç—Ä–∏—Ü—ñ
 					UView->Rows[i]->Cells[j]->Value = U.GetArr()[i][j];
 				}
 			}
 			UView->AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode::AutoSizeToAllHeaders);
-			UView->AutoResizeColumns();//—ÚÓ‚·ˆ≥
+			UView->AutoResizeColumns();//–°—Ç–æ–≤–±—Ü—ñ
 
 			AkkText->Text = Convert::ToString(a);
 			AkText->Text = Convert::ToString(akk);
@@ -120,12 +120,12 @@ void ReverseMatrix::EmborderingSolution::Esolution(Matrix MainMatrix, int iter)
 			{
 				for (int j = 0; j < V.GetColumn(); j++)
 				{
-					//«Ì‡˜ÂÌÌˇ Ï‡ÚËˆ≥
+					//–ó–Ω–∞—á–µ–Ω–Ω—è –º–∞—Ç—Ä–∏—Ü—ñ
 					VView->Rows[i]->Cells[j]->Value = V.GetArr()[i][j];
 				}
 			}
 			VView->AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode::AutoSizeToAllHeaders);
-			VView->AutoResizeColumns();//—ÚÓ‚·ˆ≥
+			VView->AutoResizeColumns();//–°—Ç–æ–≤–±—Ü—ñ
 
 			rView->RowCount = r.GetRow();
 			rView->ColumnCount = r.GetColumn();
@@ -133,12 +133,12 @@ void ReverseMatrix::EmborderingSolution::Esolution(Matrix MainMatrix, int iter)
 			{
 				for (int j = 0; j < r.GetColumn(); j++)
 				{
-					//«Ì‡˜ÂÌÌˇ Ï‡ÚËˆ≥
+					//–ó–Ω–∞—á–µ–Ω–Ω—è –º–∞—Ç—Ä–∏—Ü—ñ
 					rView->Rows[i]->Cells[j]->Value = r.GetArr()[i][j];
 				}
 			}
 			rView->AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode::AutoSizeToAllHeaders);
-			rView->AutoResizeColumns();//—ÚÓ‚·ˆ≥
+			rView->AutoResizeColumns();//–°—Ç–æ–≤–±—Ü—ñ
 
 			qView->RowCount = q.GetRow();
 			qView->ColumnCount = q.GetColumn();
@@ -146,12 +146,12 @@ void ReverseMatrix::EmborderingSolution::Esolution(Matrix MainMatrix, int iter)
 			{
 				for (int j = 0; j < q.GetColumn(); j++)
 				{
-					//«Ì‡˜ÂÌÌˇ Ï‡ÚËˆ≥
+					//–ó–Ω–∞—á–µ–Ω–Ω—è –º–∞—Ç—Ä–∏—Ü—ñ
 					qView->Rows[i]->Cells[j]->Value = q.GetArr()[i][j];
 				}
 			}
 			qView->AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode::AutoSizeToAllHeaders);
-			qView->AutoResizeColumns();//—ÚÓ‚·ˆ≥
+			qView->AutoResizeColumns();//–°—Ç–æ–≤–±—Ü—ñ
 
 			BView->RowCount = B.GetRow();
 			BView->ColumnCount = B.GetColumn();
@@ -159,12 +159,12 @@ void ReverseMatrix::EmborderingSolution::Esolution(Matrix MainMatrix, int iter)
 			{
 				for (int j = 0; j < B.GetColumn(); j++)
 				{
-					//«Ì‡˜ÂÌÌˇ Ï‡ÚËˆ≥
+					//–ó–Ω–∞—á–µ–Ω–Ω—è –º–∞—Ç—Ä–∏—Ü—ñ
 					BView->Rows[i]->Cells[j]->Value = B.GetArr()[i][j];
 				}
 			}
 			BView->AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode::AutoSizeToAllHeaders);
-			BView->AutoResizeColumns();//—ÚÓ‚·ˆ≥
+			BView->AutoResizeColumns();//–°—Ç–æ–≤–±—Ü—ñ
 
 			AkGrid->RowCount = A.GetRow();
 			AkGrid->ColumnCount = A.GetColumn();
@@ -172,12 +172,12 @@ void ReverseMatrix::EmborderingSolution::Esolution(Matrix MainMatrix, int iter)
 			{
 				for (int j = 0; j < A.GetColumn(); j++)
 				{
-					//«Ì‡˜ÂÌÌˇ Ï‡ÚËˆ≥
+					//–ó–Ω–∞—á–µ–Ω–Ω—è –º–∞—Ç—Ä–∏—Ü—ñ
 					AkGrid->Rows[i]->Cells[j]->Value = A.GetArr()[i][j];
 				}
 			}
 			AkGrid->AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode::AutoSizeToAllHeaders);
-			AkGrid->AutoResizeColumns();//—ÚÓ‚·ˆ≥
+			AkGrid->AutoResizeColumns();//–°—Ç–æ–≤–±—Ü—ñ
 		}
 
 		OldA = A;
@@ -207,7 +207,7 @@ System::Void ReverseMatrix::EmborderingSolution::IterButton_Click(System::Object
 
 	if (iter == MainMatrix.GetRow())
 	{
-		MessageBox::Show("÷Â ·ÛÎ‡ ÓÒÚ‡ÌÌˇ ≥ÚÂ‡ˆ≥ˇ");
+		MessageBox::Show("–¶–µ –±—É–ª–∞ –æ—Å—Ç–∞–Ω–Ω—è —ñ—Ç–µ—Ä–∞—Ü—ñ—è");
 	}
 	else
 	{
@@ -216,7 +216,7 @@ System::Void ReverseMatrix::EmborderingSolution::IterButton_Click(System::Object
 	return System::Void();
 }
 
-System::Void ReverseMatrix::EmborderingSolution::‚Ëı≥‰ToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
+System::Void ReverseMatrix::EmborderingSolution::–≤–∏—Ö—ñ–¥ToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	Application::Exit();
 }
