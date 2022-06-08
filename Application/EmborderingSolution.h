@@ -11,7 +11,7 @@ namespace ReverseMatrix {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Сводка для EmborderingSolution
+	/// РЎРІРѕРґРєР° РґР»СЏ EmborderingSolution
 	/// </summary>
 	public ref class EmborderingSolution : public System::Windows::Forms::Form
 	{
@@ -20,14 +20,14 @@ namespace ReverseMatrix {
 		{
 			InitializeComponent();
 			//
-			//TODO: добавьте код конструктора
+			//TODO: РґРѕР±Р°РІСЊС‚Рµ РєРѕРґ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°
 			//
 			Esolution(MainMatrix, 0);
 		}
 
 	protected:
 		/// <summary>
-		/// Освободить все используемые ресурсы.
+		/// РћСЃРІРѕР±РѕРґРёС‚СЊ РІСЃРµ РёСЃРїРѕР»СЊР·СѓРµРјС‹Рµ СЂРµСЃСѓСЂСЃС‹.
 		/// </summary>
 		~EmborderingSolution()
 		{
@@ -73,21 +73,21 @@ namespace ReverseMatrix {
 	private: System::Windows::Forms::Label^ label11;
 	private: System::Windows::Forms::DataGridView^ MainMatrixE;
 	private: System::Windows::Forms::MenuStrip^ menuStrip1;
-	private: System::Windows::Forms::ToolStripMenuItem^ вихідToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ РІРёС…С–РґToolStripMenuItem;
 
 
 	protected:
 
 	private:
 		/// <summary>
-		/// Обязательная переменная конструктора.
+		/// РћР±СЏР·Р°С‚РµР»СЊРЅР°СЏ РїРµСЂРµРјРµРЅРЅР°СЏ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°.
 		/// </summary>
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// Требуемый метод для поддержки конструктора — не изменяйте 
-		/// содержимое этого метода с помощью редактора кода.
+		/// РўСЂРµР±СѓРµРјС‹Р№ РјРµС‚РѕРґ РґР»СЏ РїРѕРґРґРµСЂР¶РєРё РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° вЂ” РЅРµ РёР·РјРµРЅСЏР№С‚Рµ 
+		/// СЃРѕРґРµСЂР¶РёРјРѕРµ СЌС‚РѕРіРѕ РјРµС‚РѕРґР° СЃ РїРѕРјРѕС‰СЊСЋ СЂРµРґР°РєС‚РѕСЂР° РєРѕРґР°.
 		/// </summary>
 		void InitializeComponent(void)
 		{
@@ -115,7 +115,7 @@ namespace ReverseMatrix {
 			this->label11 = (gcnew System::Windows::Forms::Label());
 			this->MainMatrixE = (gcnew System::Windows::Forms::DataGridView());
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
-			this->вихідToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->РІРёС…С–РґToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->MatrixAView))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->UView))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->VView))->BeginInit();
@@ -328,7 +328,7 @@ namespace ReverseMatrix {
 			this->IterButton->Name = L"IterButton";
 			this->IterButton->Size = System::Drawing::Size(127, 54);
 			this->IterButton->TabIndex = 131;
-			this->IterButton->Text = L"Далі";
+			this->IterButton->Text = L"Р”Р°Р»С–";
 			this->IterButton->UseVisualStyleBackColor = true;
 			this->IterButton->Click += gcnew System::EventHandler(this, &EmborderingSolution::IterButton_Click);
 			// 
@@ -339,7 +339,7 @@ namespace ReverseMatrix {
 			this->label11->Name = L"label11";
 			this->label11->Size = System::Drawing::Size(142, 20);
 			this->label11->TabIndex = 133;
-			this->label11->Text = L"Головна матриця";
+			this->label11->Text = L"Р“РѕР»РѕРІРЅР° РјР°С‚СЂРёС†СЏ";
 			// 
 			// MainMatrixE
 			// 
@@ -357,19 +357,19 @@ namespace ReverseMatrix {
 			// 
 			this->menuStrip1->GripMargin = System::Windows::Forms::Padding(2, 2, 0, 2);
 			this->menuStrip1->ImageScalingSize = System::Drawing::Size(24, 24);
-			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->вихідToolStripMenuItem });
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->РІРёС…С–РґToolStripMenuItem });
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
 			this->menuStrip1->Size = System::Drawing::Size(1707, 33);
 			this->menuStrip1->TabIndex = 134;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
-			// вихідToolStripMenuItem
+			// РІРёС…С–РґToolStripMenuItem
 			// 
-			this->вихідToolStripMenuItem->Name = L"вихідToolStripMenuItem";
-			this->вихідToolStripMenuItem->Size = System::Drawing::Size(70, 29);
-			this->вихідToolStripMenuItem->Text = L"Вихід";
-			this->вихідToolStripMenuItem->Click += gcnew System::EventHandler(this, &EmborderingSolution::вихідToolStripMenuItem_Click);
+			this->РІРёС…С–РґToolStripMenuItem->Name = L"РІРёС…С–РґToolStripMenuItem";
+			this->РІРёС…С–РґToolStripMenuItem->Size = System::Drawing::Size(70, 29);
+			this->РІРёС…С–РґToolStripMenuItem->Text = L"Р’РёС…С–Рґ";
+			this->РІРёС…С–РґToolStripMenuItem->Click += gcnew System::EventHandler(this, &EmborderingSolution::РІРёС…С–РґToolStripMenuItem_Click);
 			// 
 			// EmborderingSolution
 			// 
@@ -422,6 +422,6 @@ namespace ReverseMatrix {
 private: void Esolution(Matrix MainMatrix, int iter);
 private: Matrix GetMain();
 private: System::Void IterButton_Click(System::Object^ sender, System::EventArgs^ e);
-private: System::Void вихідToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
+private: System::Void РІРёС…С–РґToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }
