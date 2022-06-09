@@ -9,5 +9,5 @@ Matrix CellDivisionInitialization(Matrix MainMatrix, int number); //Розбит
 //Зібрання кліток в одну
 Matrix CellDivisionBuild(Matrix MainMatrix, Matrix MatrixR11, Matrix MatrixR12, Matrix MatrixR21, Matrix MatrixR22);
 //Знаходження матриці методом розбиття на клітки
-Matrix CellDivision(Matrix MainMatrix, int* count);
+Matrix CellDivision(Matrix MainMatrix, int* count, bool* ZeroDiv);
 int WriteFile(Matrix ReverseMatrix, std::string FileName); //Функція запису у файл
