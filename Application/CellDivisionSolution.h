@@ -11,7 +11,7 @@ namespace ReverseMatrix {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Сводка для CellDivisionSolution
+	/// РЎРІРѕРґРєР° РґР»СЏ CellDivisionSolution
 	/// </summary>
 
 	public ref class CellDivisionSolution : public System::Windows::Forms::Form
@@ -22,14 +22,14 @@ namespace ReverseMatrix {
 		{
 			InitializeComponent();
 			//
-			//TODO: добавьте код конструктора
+			//TODO: РґРѕР±Р°РІСЊС‚Рµ РєРѕРґ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°
 			//
 			CDResult(MainMatrix);
 		}
 
 	protected:
 		/// <summary>
-		/// Освободить все используемые ресурсы.
+		/// РћСЃРІРѕР±РѕРґРёС‚СЊ РІСЃРµ РёСЃРїРѕР»СЊР·СѓРµРјС‹Рµ СЂРµСЃСѓСЂСЃС‹.
 		/// </summary>
 		~CellDivisionSolution()
 		{
@@ -75,21 +75,23 @@ namespace ReverseMatrix {
 	private: System::Windows::Forms::DataGridView^ ReverseMatrixCD;
 	private: System::Windows::Forms::Label^ label8;
 	private: System::Windows::Forms::MenuStrip^ menuStrip1;
-	private: System::Windows::Forms::ToolStripMenuItem^ вихідToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ РІРёС…С–РґToolStripMenuItem;
+	private: System::Windows::Forms::TextBox^ RecCount;
+	private: System::Windows::Forms::Label^ label16;
 	protected:
 
 	protected:
 
 	private:
 		/// <summary>
-		/// Обязательная переменная конструктора.
+		/// РћР±СЏР·Р°С‚РµР»СЊРЅР°СЏ РїРµСЂРµРјРµРЅРЅР°СЏ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°.
 		/// </summary>
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// Требуемый метод для поддержки конструктора — не изменяйте 
-		/// содержимое этого метода с помощью редактора кода.
+		/// РўСЂРµР±СѓРµРјС‹Р№ РјРµС‚РѕРґ РґР»СЏ РїРѕРґРґРµСЂР¶РєРё РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° вЂ” РЅРµ РёР·РјРµРЅСЏР№С‚Рµ 
+		/// СЃРѕРґРµСЂР¶РёРјРѕРµ СЌС‚РѕРіРѕ РјРµС‚РѕРґР° СЃ РїРѕРјРѕС‰СЊСЋ СЂРµРґР°РєС‚РѕСЂР° РєРѕРґР°.
 		/// </summary>
 		void InitializeComponent(void)
 		{
@@ -120,7 +122,9 @@ namespace ReverseMatrix {
 			this->ReverseMatrixCD = (gcnew System::Windows::Forms::DataGridView());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
-			this->вихідToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->РІРёС…С–РґToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->RecCount = (gcnew System::Windows::Forms::TextBox());
+			this->label16 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->MatrixCell11View))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->MatrixCell12View))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->MatrixCell21View))->BeginInit();
@@ -140,7 +144,7 @@ namespace ReverseMatrix {
 			this->IntroductionLabel->Name = L"IntroductionLabel";
 			this->IntroductionLabel->Size = System::Drawing::Size(482, 20);
 			this->IntroductionLabel->TabIndex = 0;
-			this->IntroductionLabel->Text = L"Спочатку розіб\'ємо основну матрицю на 4 підматриці (клітини)";
+			this->IntroductionLabel->Text = L"РЎРїРѕС‡Р°С‚РєСѓ СЂРѕР·С–Р±\'С”РјРѕ РѕСЃРЅРѕРІРЅСѓ РјР°С‚СЂРёС†СЋ РЅР° 4 РїС–РґРјР°С‚СЂРёС†С– (РєР»С–С‚РёРЅРё)";
 			// 
 			// MatrixCell11View
 			// 
@@ -217,7 +221,7 @@ namespace ReverseMatrix {
 			this->SecondPhase->Name = L"SecondPhase";
 			this->SecondPhase->Size = System::Drawing::Size(463, 20);
 			this->SecondPhase->TabIndex = 5;
-			this->SecondPhase->Text = L"Далі знаходимо клітини до оберненої матриці по формулам";
+			this->SecondPhase->Text = L"Р”Р°Р»С– Р·РЅР°С…РѕРґРёРјРѕ РєР»С–С‚РёРЅРё РґРѕ РѕР±РµСЂРЅРµРЅРѕС— РјР°С‚СЂРёС†С– РїРѕ С„РѕСЂРјСѓР»Р°Рј";
 			// 
 			// label1
 			// 
@@ -441,25 +445,42 @@ namespace ReverseMatrix {
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(401, 20);
 			this->label8->TabIndex = 27;
-			this->label8->Text = L"Збираємо клітини та отримуємо обернену матрицю";
+			this->label8->Text = L"Р—Р±РёСЂР°С”РјРѕ РєР»С–С‚РёРЅРё С‚Р° РѕС‚СЂРёРјСѓС”РјРѕ РѕР±РµСЂРЅРµРЅСѓ РјР°С‚СЂРёС†СЋ";
 			// 
 			// menuStrip1
 			// 
 			this->menuStrip1->GripMargin = System::Windows::Forms::Padding(2, 2, 0, 2);
 			this->menuStrip1->ImageScalingSize = System::Drawing::Size(24, 24);
-			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->вихідToolStripMenuItem });
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->РІРёС…С–РґToolStripMenuItem });
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
 			this->menuStrip1->Size = System::Drawing::Size(1395, 33);
 			this->menuStrip1->TabIndex = 28;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
-			// вихідToolStripMenuItem
+			// РІРёС…С–РґToolStripMenuItem
 			// 
-			this->вихідToolStripMenuItem->Name = L"вихідToolStripMenuItem";
-			this->вихідToolStripMenuItem->Size = System::Drawing::Size(70, 29);
-			this->вихідToolStripMenuItem->Text = L"Вихід";
-			this->вихідToolStripMenuItem->Click += gcnew System::EventHandler(this, &CellDivisionSolution::вихідToolStripMenuItem_Click);
+			this->РІРёС…С–РґToolStripMenuItem->Name = L"РІРёС…С–РґToolStripMenuItem";
+			this->РІРёС…С–РґToolStripMenuItem->Size = System::Drawing::Size(70, 29);
+			this->РІРёС…С–РґToolStripMenuItem->Text = L"Р’РёС…С–Рґ";
+			this->РІРёС…С–РґToolStripMenuItem->Click += gcnew System::EventHandler(this, &CellDivisionSolution::РІРёС…С–РґToolStripMenuItem_Click);
+			// 
+			// RecCount
+			// 
+			this->RecCount->Location = System::Drawing::Point(1036, 930);
+			this->RecCount->Name = L"RecCount";
+			this->RecCount->ReadOnly = true;
+			this->RecCount->Size = System::Drawing::Size(100, 26);
+			this->RecCount->TabIndex = 29;
+			// 
+			// label16
+			// 
+			this->label16->AutoSize = true;
+			this->label16->Location = System::Drawing::Point(956, 889);
+			this->label16->Name = L"label16";
+			this->label16->Size = System::Drawing::Size(253, 20);
+			this->label16->TabIndex = 30;
+			this->label16->Text = L"РљС–Р»СЊРєС–СЃС‚СЊ СЂРµРєСѓСЂСЃРёРІРЅРёС… РІС…РѕРґР¶РµРЅСЊ";
 			// 
 			// CellDivisionSolution
 			// 
@@ -467,6 +488,8 @@ namespace ReverseMatrix {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoScroll = true;
 			this->ClientSize = System::Drawing::Size(1395, 1050);
+			this->Controls->Add(this->label16);
+			this->Controls->Add(this->RecCount);
 			this->Controls->Add(this->label8);
 			this->Controls->Add(this->ReverseMatrixCD);
 			this->Controls->Add(this->R22View);
@@ -515,7 +538,7 @@ namespace ReverseMatrix {
 #pragma endregion
 
 
-private: System::Void вихідToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
+private: System::Void РІРёС…С–РґToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
 private: void CDResult(Matrix MainMatrix);
 };
 }
