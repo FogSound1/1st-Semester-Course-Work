@@ -30,7 +30,7 @@ System::Void ReverseMatrix::RevMatForm::CreateMatrixButton_Click(System::Object^
     ShowMatrix(SizeMatrix, MainMatrix, 1); //Виводим матрицю
     //Ячейки
     MainMatrixGridView->AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode::AutoSizeToAllHeaders);
-    MainMatrixGridView->AutoResizeColumns();//Стовбці
+
     
     return System::Void();
 }
@@ -102,6 +102,7 @@ System::Void ReverseMatrix::RevMatForm::EmborderingButton_Click(System::Object^ 
 System::Void ReverseMatrix::RevMatForm::CellDivisionButton_Click(System::Object^ sender, System::EventArgs^ e)
 {
     int count = 0;
+    bool ZeroDiv = false;
     if (BannedSymbols())
     {
         MessageBox::Show("Задана матриця містить некоректний символ");
@@ -118,11 +119,19 @@ System::Void ReverseMatrix::RevMatForm::CellDivisionButton_Click(System::Object^
 
     if (SolutionCheck->Checked)
     {
-        CellDivisionSolution^ Form = gcnew CellDivisionSolution(MainMatrix);
-        Form->Show();
+        if (MainMatrix.GetRow() == 1)
+        {
+            MessageBox::Show("Для матриці розмірності 1х1 детальне рішення непотрібне");
+        }
+        else
+        {
+            CellDivisionSolution^ Form = gcnew CellDivisionSolution(MainMatrix);
+            Form->Show();
+        }
+        
     }
 
-    Matrix ReverseMatrix = CellDivision(MainMatrix, &count);
+    Matrix ReverseMatrix = CellDivision(MainMatrix, &count, &ZeroDiv);
     ReverseMatrixGridView->RowCount = ReverseMatrix.GetRow();
     ReverseMatrixGridView->ColumnCount = ReverseMatrix.GetRow();
 
