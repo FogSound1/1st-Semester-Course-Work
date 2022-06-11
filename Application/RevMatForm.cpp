@@ -8,7 +8,7 @@ using namespace std;
 using namespace msclr::interop;
 using namespace ReverseMatrix;
 
-int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) 
+int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 {
     Application::EnableVisualStyles();
     Application::SetCompatibleTextRenderingDefault(false);
@@ -31,7 +31,7 @@ System::Void ReverseMatrix::RevMatForm::CreateMatrixButton_Click(System::Object^
     //Ячейки
     MainMatrixGridView->AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode::AutoSizeToAllHeaders);
 
-    
+
     return System::Void();
 }
 
@@ -92,8 +92,8 @@ System::Void ReverseMatrix::RevMatForm::EmborderingButton_Click(System::Object^ 
 
     ShowMatrix(ReverseMatrix.GetRow(), ReverseMatrix, 2);
     //Ячейки
-    MainMatrixGridView->AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode::AutoSizeToAllHeaders);
-    MainMatrixGridView->AutoResizeColumns();//Стовбці
+    ReverseMatrixGridView->AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode::AutoSizeToAllHeaders);
+    ReverseMatrixGridView->AutoResizeColumns();//Стовбці
 
     return System::Void();
 }
@@ -128,7 +128,7 @@ System::Void ReverseMatrix::RevMatForm::CellDivisionButton_Click(System::Object^
             CellDivisionSolution^ Form = gcnew CellDivisionSolution(MainMatrix);
             Form->Show();
         }
-        
+
     }
 
     Matrix ReverseMatrix = CellDivision(MainMatrix, &count, &ZeroDiv);
@@ -204,7 +204,7 @@ System::Void ReverseMatrix::RevMatForm::WriteFileButton_Click(System::Object^ se
 {
     Matrix ReverseMatrix = GetMatrix(2);
     string FileName = marshal_as<string>(FileNameTextBox->Text);
-    
+
     int result = WriteFile(ReverseMatrix, FileName);
     if (result == 1)
     {
@@ -249,7 +249,7 @@ bool ReverseMatrix::RevMatForm::BannedSymbols()
                     if (k == 0 && minus.find(Check[k]) != string::npos)
                     {
                         //Якщо перший символ -, а другий ,
-                        if (comma.find(Check[k+1]) != string::npos)
+                        if (comma.find(Check[k + 1]) != string::npos)
                         {
                             return true;
                         }
@@ -271,4 +271,4 @@ bool ReverseMatrix::RevMatForm::BannedSymbols()
             }
         }
     }
- }
+}
