@@ -142,6 +142,7 @@ namespace ReverseMatrix {
 			this->MatrixAView->ColumnHeadersVisible = false;
 			this->MatrixAView->Location = System::Drawing::Point(84, 262);
 			this->MatrixAView->Name = L"MatrixAView";
+			this->MatrixAView->ReadOnly = true;
 			this->MatrixAView->RowHeadersVisible = false;
 			this->MatrixAView->RowHeadersWidth = 62;
 			this->MatrixAView->RowTemplate->Height = 28;
@@ -163,6 +164,7 @@ namespace ReverseMatrix {
 			this->UView->ColumnHeadersVisible = false;
 			this->UView->Location = System::Drawing::Point(1044, 365);
 			this->UView->Name = L"UView";
+			this->UView->ReadOnly = true;
 			this->UView->RowHeadersVisible = false;
 			this->UView->RowHeadersWidth = 62;
 			this->UView->RowTemplate->Height = 28;
@@ -175,6 +177,7 @@ namespace ReverseMatrix {
 			this->VView->ColumnHeadersVisible = false;
 			this->VView->Location = System::Drawing::Point(468, 392);
 			this->VView->Name = L"VView";
+			this->VView->ReadOnly = true;
 			this->VView->RowHeadersVisible = false;
 			this->VView->RowHeadersWidth = 62;
 			this->VView->RowTemplate->Height = 28;
@@ -203,6 +206,7 @@ namespace ReverseMatrix {
 			// 
 			this->IterText->Location = System::Drawing::Point(84, 194);
 			this->IterText->Name = L"IterText";
+			this->IterText->ReadOnly = true;
 			this->IterText->Size = System::Drawing::Size(100, 26);
 			this->IterText->TabIndex = 118;
 			// 
@@ -210,6 +214,7 @@ namespace ReverseMatrix {
 			// 
 			this->AkkText->Location = System::Drawing::Point(496, 546);
 			this->AkkText->Name = L"AkkText";
+			this->AkkText->ReadOnly = true;
 			this->AkkText->Size = System::Drawing::Size(100, 26);
 			this->AkkText->TabIndex = 119;
 			// 
@@ -217,6 +222,7 @@ namespace ReverseMatrix {
 			// 
 			this->AkText->Location = System::Drawing::Point(789, 546);
 			this->AkText->Name = L"AkText";
+			this->AkText->ReadOnly = true;
 			this->AkText->Size = System::Drawing::Size(100, 26);
 			this->AkText->TabIndex = 120;
 			// 
@@ -274,6 +280,7 @@ namespace ReverseMatrix {
 			this->rView->ColumnHeadersVisible = false;
 			this->rView->Location = System::Drawing::Point(296, 587);
 			this->rView->Name = L"rView";
+			this->rView->ReadOnly = true;
 			this->rView->RowHeadersVisible = false;
 			this->rView->RowHeadersWidth = 62;
 			this->rView->RowTemplate->Height = 28;
@@ -295,6 +302,7 @@ namespace ReverseMatrix {
 			this->BView->ColumnHeadersVisible = false;
 			this->BView->Location = System::Drawing::Point(723, 715);
 			this->BView->Name = L"BView";
+			this->BView->ReadOnly = true;
 			this->BView->RowHeadersVisible = false;
 			this->BView->RowHeadersWidth = 62;
 			this->BView->RowTemplate->Height = 28;
@@ -316,6 +324,7 @@ namespace ReverseMatrix {
 			this->AkGrid->ColumnHeadersVisible = false;
 			this->AkGrid->Location = System::Drawing::Point(1208, 671);
 			this->AkGrid->Name = L"AkGrid";
+			this->AkGrid->ReadOnly = true;
 			this->AkGrid->RowHeadersVisible = false;
 			this->AkGrid->RowHeadersWidth = 62;
 			this->AkGrid->RowTemplate->Height = 28;
@@ -347,6 +356,7 @@ namespace ReverseMatrix {
 			this->MainMatrixE->ColumnHeadersVisible = false;
 			this->MainMatrixE->Location = System::Drawing::Point(470, 38);
 			this->MainMatrixE->Name = L"MainMatrixE";
+			this->MainMatrixE->ReadOnly = true;
 			this->MainMatrixE->RowHeadersVisible = false;
 			this->MainMatrixE->RowHeadersWidth = 62;
 			this->MainMatrixE->RowTemplate->Height = 28;
@@ -404,6 +414,7 @@ namespace ReverseMatrix {
 			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"EmborderingSolution";
 			this->Text = L"EmborderingSolution";
+			this->WindowState = System::Windows::Forms::FormWindowState::Maximized;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->MatrixAView))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->UView))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->VView))->EndInit();
