@@ -520,6 +520,7 @@ namespace ReverseMatrix {
 			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"CellDivisionSolution";
 			this->Text = L"CellDivisionSolution";
+			this->WindowState = System::Windows::Forms::FormWindowState::Maximized;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->MatrixCell11View))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->MatrixCell12View))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->MatrixCell21View))->EndInit();
