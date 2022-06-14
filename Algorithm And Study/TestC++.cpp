@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include "TestC.h"
 using namespace std;
 
@@ -16,26 +16,20 @@ int main()
 	Matrix MainMatrix(SizeNumber, SizeNumber);
 	if (Method == 1)
 	{
-		MainMatrix.ArrGenAuto(1, 4);
+		MainMatrix.ArrGenAuto(5, 64);
 	}
 	else
 	{
 		MainMatrix.ArrgenMan();
 	}
-	cout << "Enter 1 to use emborder method\nEnter 2 to use cell division method ";
-	cin >> Method;
-	cout << endl << MainMatrix;
-	cout << endl << NormalReverse(MainMatrix);
-	cout << "___________________________________________________________" << endl;
-	if (Method == 1)
-	{
-		Matrix ReverseMatrix = MachineZero(Embordering(MainMatrix));
-		cout << ReverseMatrix;
-	}
-	else
-	{
-		Matrix ReverseMatrix = MachineZero(CellDivisionInitialization(MainMatrix));
-		cout << ReverseMatrix;
-	}
+	int count = 0;
+	int elcount = 0;
+	int elcountc = 0;
+	int countc = 0;
+	bool ZeroDiv;
+	CellDivision(MainMatrix, &countc, &ZeroDiv, &elcountc);
+	Embordering(MainMatrix, &count, &elcount);
+	cout << endl << countc << " recourse " << elcountc << " el oper";
+	cout << endl << count << " iter " << elcount << " el oper";
 	return 0;
 }
