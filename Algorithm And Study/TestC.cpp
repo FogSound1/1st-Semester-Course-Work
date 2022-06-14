@@ -6,7 +6,6 @@
 #include <string>
 using namespace std;
 
-//Не реализована проверка на готовые клетки, CellDivision иногда не работает
 
 //Функції класу Matrix
 Matrix::Matrix(int RowNumber, int ColumnNumber) //Конструктор класу
@@ -63,11 +62,11 @@ void Matrix::ArrGenAuto(int RangeMin, int RangeMax) //Генерація мат�
 				}
 				else
 				{
-					Arr[i][j] = RangeMin + rand() % RangeMax;
+					Arr[i][j] = rand() % (RangeMax - RangeMin + 1) + RangeMin;
 				}
 			}
 		}
-		if (UnAcceptable(*this) && RangeMax != 0)
+		if (UnAcceptable(*this, 3) && RangeMax != 0)
 		{
 			continue;
 		}
@@ -90,7 +89,7 @@ void Matrix::ArrgenMan() //Створення матриці мануально
 				cin >> Arr[i][j];
 			}
 		}
-		if (UnAcceptable(*this))
+		if (UnAcceptable(*this, 3))
 		{
 			cout << "The matrix is unacceptable for these methods, please try again" << endl;
 			continue;
@@ -267,67 +266,41 @@ void Matrix::operator = (const Matrix &OtherMatrix) //Перевантаженн
 }
 
 
-bool UnAcceptable(Matrix MainMatrix) //Перевірка матриці на визначники різних її частин
+bool UnAcceptable(Matrix MainMatrix, int type) //Перевірка матриці на визначники різних її частин
 {
-	if (MainMatrix.Det() == 0)
+	if (MainMatrix.GetRow() == 1 && MainMatrix.GetColumn() == 1 && MainMatrix.GetArr()[0][0] != 0)
 	{
-		return true;
+		return false;
 	}
-	for (int k = 2; k < MainMatrix.GetRow(); k++)
+	if (type == 1 || type == 3)
 	{
-		Matrix Temp(k, k);
-		for (int i = 0; i < k; i++)
-		{
-			for (int j = 0; j < k; j++)
-			{
-				Temp.GetArr()[i][j] = MainMatrix.GetArr()[i][j];
-			}
-		}
-		if (Temp.Det() == 0)
+		if (MainMatrix.GetArr()[0][0] == 0)
 		{
 			return true;
 		}
-	}
-
-	if (MainMatrix.GetRow() % 2 == 0)
-	{
-		Matrix MatrixCell(MainMatrix.GetRow() / 2, MainMatrix.GetRow() / 2);
-		for (int i = MainMatrix.GetRow() / 2; i < MainMatrix.GetRow(); i++)
+		for (int k = 2; k < MainMatrix.GetRow(); k++)
 		{
-			for (int j = MainMatrix.GetRow() / 2; j < MainMatrix.GetRow(); j++)
+			Matrix Temp(k, k);
+			for (int i = 0; i < k; i++)
 			{
-
-				if (i >= MainMatrix.GetRow() / 2 && j >= MainMatrix.GetRow() / 2)
+				for (int j = 0; j < k; j++)
 				{
-					MatrixCell.GetArr()[i - (MainMatrix.GetRow() / 2)][j - (MainMatrix.GetRow() / 2)] = MainMatrix.GetArr()[i][j];
+					Temp.GetArr()[i][j] = MainMatrix.GetArr()[i][j];
 				}
 			}
 		}
-		if (MatrixCell.Det() == 0)
-		{
-			return true;
-		}
 	}
-	else
+	if (type == 2 || type == 3)
 	{
-		Matrix MatrixCell(MainMatrix.GetRow() / 2, MainMatrix.GetRow() / 2);
-		for (int i = MainMatrix.GetRow() / 2 + 1; i < MainMatrix.GetRow(); i++)
-		{
-			for (int j = MainMatrix.GetRow() / 2 + 1; j < MainMatrix.GetRow(); j++)
-			{
-
-				if (i >= MainMatrix.GetRow() / 2 + 1 && j >= MainMatrix.GetRow() / 2 + 1)
-				{
-					MatrixCell.GetArr()[i - (MainMatrix.GetRow() / 2 + 1)][j - (MainMatrix.GetRow() / 2 + 1)] = MainMatrix.GetArr()[i][j];
-				}
-			}
-		}
-		if (MatrixCell.Det() == 0)
+		int elcount;
+		int count = 0;
+		bool ZeroDiv = false;
+		CellDivision(MainMatrix, &count, &ZeroDiv, &elcount);
+		if (ZeroDiv)
 		{
 			return true;
 		}
 	}
-	return false;
 }
 
 
@@ -382,79 +355,74 @@ bool DoubleZero(double number) //Перевірка на машинні нулі
 	}
 }
 
-Matrix Embordering(Matrix MainMatrix) //Метод окаймлення
+Matrix Embordering(Matrix MainMatrix, int* count, int* elcount) //Метод окаймлення
 {
 	int Disposal = MainMatrix.GetRow();
 
-	double A10 = 1/MainMatrix.GetArr()[0][0];
-	double U2 = MainMatrix.GetArr()[0][1];
-	double V2 = MainMatrix.GetArr()[1][0];
-	double a2 = MainMatrix.GetArr()[1][1] - V2 * A10 * U2;
-	double r2 = (-1 / a2) * A10 * U2;
-	double q2 = (-1 / a2) * V2 * A10;
-	double B2 = A10 - (A10 * U2) * q2;
-
-	Matrix OldA(2, 2);
-	OldA.GetArr()[0][0] = B2;
-	OldA.GetArr()[0][1] = r2;
-	OldA.GetArr()[1][0] = q2;
-	OldA.GetArr()[1][1] = 1/a2;
-
-	if (MainMatrix.GetRow() > 2)
-	{
-
-		for (int k = 2; k < Disposal; k++)
-		{
-			Matrix A(k + 1, k + 1);
-			for (int i = 0; i < k + 1; i++)
-			{
-				for (int j = 0; j < k + 1; j++)
-				{
-					A.GetArr()[i][j] = MainMatrix.GetArr()[i][j];
-				}
-			}
-
-			Matrix U(k, 1);
-			Matrix V(1, k);
-			double a = A.GetArr()[k][k];
-			for (int i = 0; i < k; i++)
-			{
-				U.GetArr()[i][0] = A.GetArr()[i][k];
-				V.GetArr()[0][i] = A.GetArr()[k][i];
-			}
-			double akk = a - (V * OldA * U).GetArr()[0][0];
-			Matrix r = OldA * U * (-1 / akk);
-			Matrix q = V * OldA * (-1 / akk);
-			Matrix B = OldA - (OldA * U) * q;
-
-
-			for (int i = 0; i < k; i++)
-			{
-				for (int j = 0; j < k; j++)
-				{
-					A.GetArr()[i][j] = B.GetArr()[i][j];
-				}
-			}
-			for (int j = 0; j < k; j++)
-			{
-				A.GetArr()[j][k] = r.GetArr()[j][0];
-				A.GetArr()[k][j] = q.GetArr()[0][j];
-			}
-			A.GetArr()[k][k] = (1 / akk);
-			if (k == Disposal - 1)
-			{
-				return A;
-			}
-			OldA = A;
-		}
-	}
-	else
+	Matrix OldA(1, 1);
+	OldA.GetArr()[0][0] = 1 / MainMatrix.GetArr()[0][0];
+	if (MainMatrix.GetRow() == 1)
 	{
 		return OldA;
 	}
+
+	for (int k = 1; k < Disposal; k++)
+	{
+		(*count)++;
+		Matrix A(k + 1, k + 1);
+		for (int i = 0; i < k + 1; i++)
+		{
+			for (int j = 0; j < k + 1; j++)
+			{
+				(*count)++;
+				A.GetArr()[i][j] = MainMatrix.GetArr()[i][j];
+			}
+		}
+
+		Matrix U(k, 1);
+		Matrix V(1, k);
+		double a = A.GetArr()[k][k];
+		for (int i = 0; i < k; i++)
+		{
+			(*count)++;
+			U.GetArr()[i][0] = A.GetArr()[i][k];
+			V.GetArr()[0][i] = A.GetArr()[k][i];
+		}
+		(*elcount) += 3;
+		double akk = a - (V * OldA * U).GetArr()[0][0];
+		(*elcount) += 3;
+		Matrix r = OldA * U * (-1 / akk);
+		(*elcount) += 3;
+		Matrix q = V * OldA * (-1 / akk);
+		(*elcount) += 3;
+		Matrix B = OldA - (OldA * U) * q;
+
+
+		for (int i = 0; i < k; i++)
+		{
+			for (int j = 0; j < k; j++)
+			{
+				(*count)++;
+				A.GetArr()[i][j] = B.GetArr()[i][j];
+			}
+		}
+		for (int j = 0; j < k; j++)
+		{
+			(*count)++;
+			A.GetArr()[j][k] = r.GetArr()[j][0];
+			A.GetArr()[k][j] = q.GetArr()[0][j];
+		}
+		(*elcount) ++;
+		A.GetArr()[k][k] = (1 / akk);
+		if (k == Disposal - 1)
+		{
+			return MachineZero(A);
+		}
+		OldA = A;
+	}
 }
 
-Matrix CellDivisionInitialization(Matrix MainMatrix) //Розбиття матриці на клітки
+Matrix CellDivisionInitialization(Matrix MainMatrix, int number) //Розбиття матриці на клітки
 {
 	int Disposal = MainMatrix.GetRow();
 
@@ -487,8 +455,22 @@ Matrix CellDivisionInitialization(Matrix MainMatrix) //Розбиття матр
 				}
 			}
 		}
-		Matrix ReverseMatrix = CellDivision(MainMatrix, MatrixCell11, MatrixCell12, MatrixCell21, MatrixCell22);
-		return ReverseMatrix;
+		if (number == 1)
+		{
+			return MatrixCell11;
+		}
+		else if (number == 2)
+		{
+			return MatrixCell12;
+		}
+		else if (number == 3)
+		{
+			return MatrixCell21;
+		}
+		else
+		{
+			return MatrixCell22;
+		}
 	}
 	else
 	{
@@ -519,18 +501,28 @@ Matrix CellDivisionInitialization(Matrix MainMatrix) //Розбиття матр
 				}
 			}
 		}
-		Matrix ReverseMatrix = CellDivision(MainMatrix, MatrixCell11, MatrixCell12, MatrixCell21, MatrixCell22);
-		return ReverseMatrix;
+		if (number == 1)
+		{
+			return MatrixCell11;
+		}
+		else if (number == 2)
+		{
+			return MatrixCell12;
+		}
+		else if (number == 3)
+		{
+			return MatrixCell21;
+		}
+		else
+		{
+			return MatrixCell22;
+		}
 	}
 }
 
-//Знаходження матриці методом розбиття на клітки
-Matrix CellDivision(Matrix MainMatrix, Matrix MatrixCell11, Matrix MatrixCell12, Matrix MatrixCell21, Matrix MatrixCell22)
+
+Matrix CellDivisionBuild(Matrix MainMatrix, Matrix MatrixR11, Matrix MatrixR12, Matrix MatrixR21, Matrix MatrixR22)
 {
-	Matrix MatrixR11 = Embordering(MatrixCell11 - (MatrixCell12 * (Embordering(MatrixCell22) * MatrixCell21)));
-	Matrix MatrixR12 = ((MatrixR11 * (-1)) * MatrixCell12) * Embordering(MatrixCell22);
-	Matrix MatrixR21 = (Embordering(MatrixCell22) * (-1)) * MatrixCell21 * MatrixR11;
-	Matrix MatrixR22 = Embordering(MatrixCell22) - (NormalReverse(MatrixCell22) * MatrixCell21 * MatrixR12);
 	Matrix ReverseMatrix(MainMatrix.GetRow(), MainMatrix.GetColumn());
 	int Disposal = ReverseMatrix.GetRow();
 	if (Disposal % 2 == 0)
@@ -545,15 +537,15 @@ Matrix CellDivision(Matrix MainMatrix, Matrix MatrixCell11, Matrix MatrixCell12,
 				}
 				else if (i < Disposal / 2 && j >= Disposal / 2)
 				{
-					ReverseMatrix.GetArr()[i][j] = MatrixR12.GetArr()[i][j - Disposal/2];
+					ReverseMatrix.GetArr()[i][j] = MatrixR12.GetArr()[i][j - Disposal / 2];
 				}
 				else if (i >= Disposal / 2 && j < Disposal / 2)
 				{
-					ReverseMatrix.GetArr()[i][j] = MatrixR21.GetArr()[i - Disposal/2][j];
+					ReverseMatrix.GetArr()[i][j] = MatrixR21.GetArr()[i - Disposal / 2][j];
 				}
 				else if (i >= Disposal / 2 && j >= Disposal / 2)
 				{
-					ReverseMatrix.GetArr()[i][j] = MatrixR22.GetArr()[i - Disposal/2][j - Disposal/2];
+					ReverseMatrix.GetArr()[i][j] = MatrixR22.GetArr()[i - Disposal / 2][j - Disposal / 2];
 				}
 			}
 		}
@@ -584,4 +576,39 @@ Matrix CellDivision(Matrix MainMatrix, Matrix MatrixCell11, Matrix MatrixCell12,
 		}
 	}
 	return ReverseMatrix;
+}
+
+//Знаходження матриці методом розбиття на клітки
+Matrix CellDivision(Matrix MainMatrix, int* count, bool* ZeroDiv, int* elcount)
+{
+
+	if (MainMatrix.GetRow() == 1)
+	{
+		if (MainMatrix.GetArr()[0][0] == 0)
+		{
+			(*ZeroDiv) = true;
+		}
+		MainMatrix.GetArr()[0][0] = 1 / MainMatrix.GetArr()[0][0];
+		return MainMatrix;
+	}
+
+	Matrix MatrixCell11 = CellDivisionInitialization(MainMatrix, 1);
+	Matrix MatrixCell12 = CellDivisionInitialization(MainMatrix, 2);
+	Matrix MatrixCell21 = CellDivisionInitialization(MainMatrix, 3);
+	Matrix MatrixCell22 = CellDivisionInitialization(MainMatrix, 4);
+	(*count)++;
+	Matrix MatrixCell22Inverse = CellDivision(MatrixCell22, count, ZeroDiv, elcount);
+
+	(*count)++;
+	(*elcount)+=3;
+	Matrix MatrixR11 = CellDivision(MatrixCell11 - (MatrixCell12 * (MatrixCell22Inverse * MatrixCell21)), count, ZeroDiv, elcount);
+	(*elcount) += 3;
+	Matrix MatrixR12 = ((MatrixR11 * (-1)) * MatrixCell12) * MatrixCell22Inverse;
+	(*elcount) += 3;
+	Matrix MatrixR21 = (MatrixCell22Inverse * (-1)) * MatrixCell21 * MatrixR11;
+	(*elcount) += 3;
+	Matrix MatrixR22 = MatrixCell22Inverse - (MatrixCell22Inverse * MatrixCell21 * MatrixR12);
+
+	Matrix ReverseMatrix = CellDivisionBuild(MainMatrix, MatrixR11, MatrixR12, MatrixR21, MatrixR22);
+	return MachineZero(ReverseMatrix);
 }
