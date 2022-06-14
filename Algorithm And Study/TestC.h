@@ -29,10 +29,11 @@ public:
 };
 
 bool DoubleZero(double number); //Перевірка на машинні нулі у матриці
-bool UnAcceptable(Matrix MainMatrix); //Перевірка матриці на визначники різних її частин
+bool UnAcceptable(Matrix MainMatrix, int type); //Перевірка матриці на визначники різних її частин
 Matrix MachineZero(Matrix CurrentMatrix); //Заміна усіх машинних нулей на звичайні
 Matrix NormalReverse(Matrix CurrentMatrix); //Знаходження оберненної матриці для кліток
-Matrix Embordering(Matrix MainMatrix); //Метод окаймлення
-Matrix CellDivisionInitialization(Matrix MainMatrix); //Розбиття матриці на клітки
+Matrix Embordering(Matrix MainMatrix, int* count, int* elcount); //Метод окаймлення
+Matrix CellDivisionInitialization(Matrix MainMatrix, int number); //Розбиття матриці на клітки
 //Знаходження матриці методом розбиття на клітки
-Matrix CellDivision(Matrix MainMatrix, Matrix MatrixCell11, Matrix MatrixCell12, Matrix MatrixCell21, Matrix MatrixCell22);
+Matrix CellDivision(Matrix MainMatrix, int* count, bool* ZeroDiv, int* elcount);
+Matrix CellDivisionBuild(Matrix MainMatrix, Matrix MatrixR11, Matrix MatrixR12, Matrix MatrixR21, Matrix MatrixR22);
